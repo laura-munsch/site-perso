@@ -1,6 +1,7 @@
 <script context="module">
     import createClient from './lib/prismicClient';
     import  * as prismicH from "@prismicio/helpers";
+    import Loader from "./components/Loader.svelte"
     
     const client = createClient(fetch);
     const prismicQuery = client.getFirst();
@@ -10,9 +11,7 @@
 </script>
 
 {#await prismicQuery}
-
-    <p>Loading...</p>
-
+    <Loader />
 {:then home}
 
     <h1>{prismicH.asText(home.data.title)}</h1>
@@ -24,16 +23,18 @@
         {#each timelinePiece.items as item}
             {#if item.project.slug}
                 {#await loadProject(item.project.slug)}
-                    <p>Loading...</p>
+                    <Loader />
                 {:then project} 
-                    <img src="{project.data.image.url}" alt="{project.data.image.alt}" />
+
+                    <a href="{project.url}">
+                        <img src="{project.data.image.url}" alt="{project.data.image.alt}" />
+                    </a>
+
                 {/await}
             {/if}
         {/each}
     {/each}
 
 {:catch error}
-
     <pre>{error.message}</pre>
-
 {/await}
