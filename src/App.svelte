@@ -5,9 +5,12 @@
     
     const client = createClient(fetch);
     const prismicQuery = client.getFirst();
-    const loadProject = (slug) => client.getByUID('projects', slug, 
-        { fetchLinks: 'image' }
-    )
+    
+    function loadProject(slug) {
+        client.getByUID('projects', slug, {
+            fetchLinks: 'image' 
+        })
+    }
 </script>
 
 {#await prismicQuery}
