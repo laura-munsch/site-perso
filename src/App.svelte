@@ -2,15 +2,38 @@
     import createClient from './lib/prismicClient';
     import  * as prismicH from "@prismicio/helpers";
     
-    const client = createClient(fetch)
-    const prismicQuery = client.getFirst()
+    const client = createClient(fetch);
+    const prismicQuery = client.getFirst();
+    const loadProject = (slug) => client.getByUID('projects', slug, 
+        { fetchLinks: 'image' }
+    )
 </script>
 
 {#await prismicQuery}
+
     <p>Loading...</p>
-{:then prismicResponse}
-    <h1>{prismicH.asText(prismicResponse.data.title)}</h1>
-    {@html prismicH.asHTML(prismicResponse.data.description)}
+
+{:then home}
+
+    <h1>{prismicH.asText(home.data.title)}</h1>
+
+    {#each home.data.body as timelinePiece}
+        <p>{prismicH.asText(timelinePiece.primary.year)}</p>
+        {@html prismicH.asHTML(timelinePiece.primary.title)}
+
+        {#each timelinePiece.items as item}
+            {#if item.project.slug}
+                {#await loadProject(item.project.slug)}
+                    <p>Loading...</p>
+                {:then project} 
+                    <img src="{project.data.image.url}" alt="{project.data.image.alt}" />
+                {/await}
+            {/if}
+        {/each}
+    {/each}
+
 {:catch error}
+
     <pre>{error.message}</pre>
+
 {/await}
