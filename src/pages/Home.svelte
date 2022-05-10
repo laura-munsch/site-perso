@@ -5,7 +5,7 @@
     import { Link } from "svelte-routing"
     
     const client = createClient();
-    const prismicQuery = client.getFirst();
+    const prismicQuery = client.getSingle('home');
     
     async function loadProject(slug) {
         const response = await client.getByUID('projects', slug);
@@ -17,7 +17,12 @@
     <Loader />
 {:then home}
 
-    <h1>{prismicH.asText(home.data.title)}</h1>
+    <h1>
+        <span>{prismicH.asText(home.data.title)}</span>
+        <span>{prismicH.asText(home.data.titlebis)}</span>
+    </h1>
+
+    <h2>{home.data.subtitle}</h2>
 
     {#each home.data.body as timelinePiece}
         <p>{prismicH.asText(timelinePiece.primary.year)}</p>

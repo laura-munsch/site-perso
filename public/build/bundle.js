@@ -3861,7 +3861,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (43:0) {:catch error}
+    // (48:0) {:catch error}
     function create_catch_block_1(ctx) {
     	let pre;
     	let t_value = /*error*/ ctx[11].message + "";
@@ -3881,7 +3881,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(pre, file$1, 43, 4, 1180);
+    			add_location(pre, file$1, 48, 4, 1308);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, pre, anchor);
@@ -3899,7 +3899,7 @@ var app = (function () {
     		block,
     		id: create_catch_block_1.name,
     		type: "catch",
-    		source: "(43:0) {:catch error}",
+    		source: "(48:0) {:catch error}",
     		ctx
     	});
 
@@ -3909,9 +3909,18 @@ var app = (function () {
     // (18:0) {:then home}
     function create_then_block$1(ctx) {
     	let h1;
+    	let span0;
     	let t0_value = asText(/*home*/ ctx[3].data.title) + "";
     	let t0;
     	let t1;
+    	let span1;
+    	let t2_value = asText(/*home*/ ctx[3].data.titlebis) + "";
+    	let t2;
+    	let t3;
+    	let h2;
+    	let t4_value = /*home*/ ctx[3].data.subtitle + "";
+    	let t4;
+    	let t5;
     	let each_1_anchor;
     	let current;
     	let each_value = /*home*/ ctx[3].data.body;
@@ -3929,8 +3938,15 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
+    			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = space();
+    			span1 = element("span");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			h2 = element("h2");
+    			t4 = text(t4_value);
+    			t5 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
@@ -3942,9 +3958,22 @@ var app = (function () {
     		l: function claim(nodes) {
     			h1 = claim_element(nodes, "H1", {});
     			var h1_nodes = children(h1);
-    			t0 = claim_text(h1_nodes, t0_value);
+    			span0 = claim_element(h1_nodes, "SPAN", {});
+    			var span0_nodes = children(span0);
+    			t0 = claim_text(span0_nodes, t0_value);
+    			span0_nodes.forEach(detach_dev);
+    			t1 = claim_space(h1_nodes);
+    			span1 = claim_element(h1_nodes, "SPAN", {});
+    			var span1_nodes = children(span1);
+    			t2 = claim_text(span1_nodes, t2_value);
+    			span1_nodes.forEach(detach_dev);
     			h1_nodes.forEach(detach_dev);
-    			t1 = claim_space(nodes);
+    			t3 = claim_space(nodes);
+    			h2 = claim_element(nodes, "H2", {});
+    			var h2_nodes = children(h2);
+    			t4 = claim_text(h2_nodes, t4_value);
+    			h2_nodes.forEach(detach_dev);
+    			t5 = claim_space(nodes);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].l(nodes);
@@ -3954,12 +3983,22 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(h1, file$1, 19, 4, 501);
+    			add_location(span0, file$1, 20, 8, 521);
+    			add_location(span1, file$1, 21, 8, 577);
+    			add_location(h1, file$1, 19, 4, 508);
+    			add_location(h2, file$1, 24, 4, 643);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, h1, anchor);
-    			append_hydration_dev(h1, t0);
-    			insert_hydration_dev(target, t1, anchor);
+    			append_hydration_dev(h1, span0);
+    			append_hydration_dev(span0, t0);
+    			append_hydration_dev(h1, t1);
+    			append_hydration_dev(h1, span1);
+    			append_hydration_dev(span1, t2);
+    			insert_hydration_dev(target, t3, anchor);
+    			insert_hydration_dev(target, h2, anchor);
+    			append_hydration_dev(h2, t4);
+    			insert_hydration_dev(target, t5, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(target, anchor);
@@ -4017,7 +4056,9 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(h2);
+    			if (detaching) detach_dev(t5);
     			destroy_each(each_blocks, detaching);
     			if (detaching) detach_dev(each_1_anchor);
     		}
@@ -4034,7 +4075,7 @@ var app = (function () {
     	return block;
     }
 
-    // (27:12) {#if item.project.slug}
+    // (32:12) {#if item.project.slug}
     function create_if_block$1(ctx) {
     	let await_block_anchor;
     	let current;
@@ -4098,7 +4139,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(27:12) {#if item.project.slug}",
+    		source: "(32:12) {#if item.project.slug}",
     		ctx
     	});
 
@@ -4128,7 +4169,7 @@ var app = (function () {
     	return block;
     }
 
-    // (31:16) {:then project}
+    // (36:16) {:then project}
     function create_then_block_1(ctx) {
     	let link;
     	let t;
@@ -4185,14 +4226,14 @@ var app = (function () {
     		block,
     		id: create_then_block_1.name,
     		type: "then",
-    		source: "(31:16) {:then project}",
+    		source: "(36:16) {:then project}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (33:20) <Link to="{ project.url }">
+    // (38:20) <Link to="{ project.url }">
     function create_default_slot$2(ctx) {
     	let img;
     	let img_src_value;
@@ -4209,7 +4250,7 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[10].data.image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*project*/ ctx[10].data.image.alt);
-    			add_location(img, file$1, 33, 24, 987);
+    			add_location(img, file$1, 38, 24, 1115);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, img, anchor);
@@ -4224,14 +4265,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(33:20) <Link to=\\\"{ project.url }\\\">",
+    		source: "(38:20) <Link to=\\\"{ project.url }\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (29:55)                      <Loader />                 {:then project}
+    // (34:55)                      <Loader />                 {:then project}
     function create_pending_block_1(ctx) {
     	let loader;
     	let t;
@@ -4272,14 +4313,14 @@ var app = (function () {
     		block,
     		id: create_pending_block_1.name,
     		type: "pending",
-    		source: "(29:55)                      <Loader />                 {:then project}",
+    		source: "(34:55)                      <Loader />                 {:then project}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (26:8) {#each timelinePiece.items as item}
+    // (31:8) {#each timelinePiece.items as item}
     function create_each_block_1$1(ctx) {
     	let if_block_anchor;
     	let current;
@@ -4321,14 +4362,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(26:8) {#each timelinePiece.items as item}",
+    		source: "(31:8) {#each timelinePiece.items as item}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (22:4) {#each home.data.body as timelinePiece}
+    // (27:4) {#each home.data.body as timelinePiece}
     function create_each_block$1(ctx) {
     	let p;
     	let t0_value = asText(/*timelinePiece*/ ctx[4].primary.year) + "";
@@ -4383,7 +4424,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(p, file$1, 22, 8, 598);
+    			add_location(p, file$1, 27, 8, 726);
     			html_tag.a = t2;
     		},
     		m: function mount(target, anchor) {
@@ -4461,7 +4502,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(22:4) {#each home.data.body as timelinePiece}",
+    		source: "(27:4) {#each home.data.body as timelinePiece}",
     		ctx
     	});
 
@@ -4586,7 +4627,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Home', slots, []);
     	const client = createClient();
-    	const prismicQuery = client.getFirst();
+    	const prismicQuery = client.getSingle('home');
 
     	async function loadProject(slug) {
     		const response = await client.getByUID('projects', slug);
