@@ -22,7 +22,7 @@
         <span>{prismicH.asText(home.data.titlebis)}</span>
     </h1>
 
-    <h2>{home.data.subtitle}</h2>
+    <h2>{prismicH.asText(home.data.subtitle)}</h2>
 
     {#each home.data.body as timelinePiece}
         <p>{prismicH.asText(timelinePiece.primary.year)}</p>

@@ -3881,7 +3881,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(pre, file$1, 48, 4, 1308);
+    			add_location(pre, file$1, 48, 4, 1325);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, pre, anchor);
@@ -3918,7 +3918,7 @@ var app = (function () {
     	let t2;
     	let t3;
     	let h2;
-    	let t4_value = /*home*/ ctx[3].data.subtitle + "";
+    	let t4_value = asText(/*home*/ ctx[3].data.subtitle) + "";
     	let t4;
     	let t5;
     	let each_1_anchor;
@@ -4250,7 +4250,7 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[10].data.image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*project*/ ctx[10].data.image.alt);
-    			add_location(img, file$1, 38, 24, 1115);
+    			add_location(img, file$1, 38, 24, 1132);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, img, anchor);
@@ -4424,7 +4424,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(p, file$1, 27, 8, 726);
+    			add_location(p, file$1, 27, 8, 743);
     			html_tag.a = t2;
     		},
     		m: function mount(target, anchor) {
