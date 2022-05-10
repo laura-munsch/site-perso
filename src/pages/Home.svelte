@@ -1,4 +1,4 @@
-<script context="module">
+<script>
     import createClient from '../lib/prismicClient';
     import  * as prismicH from "@prismicio/helpers";
     import Loader from "../components/Loader.svelte"
@@ -8,7 +8,7 @@
     const prismicQuery = client.getFirst();
     
     async function loadProject(slug) {
-        const response = await client.getByUID('projects', "data-visualisation");
+        const response = await client.getByUID('projects', slug);
         return response;
     }
 </script>
