@@ -3861,7 +3861,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (48:0) {:catch error}
+    // (54:0) {:catch error}
     function create_catch_block_1(ctx) {
     	let pre;
     	let t_value = /*error*/ ctx[11].message + "";
@@ -3881,7 +3881,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(pre, file$1, 48, 4, 1325);
+    			add_location(pre, file$1, 54, 4, 1655);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, pre, anchor);
@@ -3899,7 +3899,7 @@ var app = (function () {
     		block,
     		id: create_catch_block_1.name,
     		type: "catch",
-    		source: "(48:0) {:catch error}",
+    		source: "(54:0) {:catch error}",
     		ctx
     	});
 
@@ -3908,6 +3908,8 @@ var app = (function () {
 
     // (18:0) {:then home}
     function create_then_block$1(ctx) {
+    	let div;
+    	let header;
     	let h1;
     	let span0;
     	let t0_value = asText(/*home*/ ctx[3].data.title) + "";
@@ -3921,7 +3923,7 @@ var app = (function () {
     	let t4_value = asText(/*home*/ ctx[3].data.subtitle) + "";
     	let t4;
     	let t5;
-    	let each_1_anchor;
+    	let main;
     	let current;
     	let each_value = /*home*/ ctx[3].data.body;
     	validate_each_argument(each_value);
@@ -3937,6 +3939,8 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div = element("div");
+    			header = element("header");
     			h1 = element("h1");
     			span0 = element("span");
     			t0 = text(t0_value);
@@ -3947,64 +3951,82 @@ var app = (function () {
     			h2 = element("h2");
     			t4 = text(t4_value);
     			t5 = space();
+    			main = element("main");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			each_1_anchor = empty();
     			this.h();
     		},
     		l: function claim(nodes) {
-    			h1 = claim_element(nodes, "H1", {});
+    			div = claim_element(nodes, "DIV", { class: true });
+    			var div_nodes = children(div);
+    			header = claim_element(div_nodes, "HEADER", { class: true });
+    			var header_nodes = children(header);
+    			h1 = claim_element(header_nodes, "H1", { class: true });
     			var h1_nodes = children(h1);
-    			span0 = claim_element(h1_nodes, "SPAN", {});
+    			span0 = claim_element(h1_nodes, "SPAN", { class: true });
     			var span0_nodes = children(span0);
     			t0 = claim_text(span0_nodes, t0_value);
     			span0_nodes.forEach(detach_dev);
     			t1 = claim_space(h1_nodes);
-    			span1 = claim_element(h1_nodes, "SPAN", {});
+    			span1 = claim_element(h1_nodes, "SPAN", { class: true });
     			var span1_nodes = children(span1);
     			t2 = claim_text(span1_nodes, t2_value);
     			span1_nodes.forEach(detach_dev);
     			h1_nodes.forEach(detach_dev);
-    			t3 = claim_space(nodes);
-    			h2 = claim_element(nodes, "H2", {});
+    			t3 = claim_space(header_nodes);
+    			h2 = claim_element(header_nodes, "H2", {});
     			var h2_nodes = children(h2);
     			t4 = claim_text(h2_nodes, t4_value);
     			h2_nodes.forEach(detach_dev);
-    			t5 = claim_space(nodes);
+    			header_nodes.forEach(detach_dev);
+    			t5 = claim_space(div_nodes);
+    			main = claim_element(div_nodes, "MAIN", {});
+    			var main_nodes = children(main);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].l(nodes);
+    				each_blocks[i].l(main_nodes);
     			}
 
-    			each_1_anchor = empty();
+    			main_nodes.forEach(detach_dev);
+    			div_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(span0, file$1, 20, 8, 521);
-    			add_location(span1, file$1, 21, 8, 577);
-    			add_location(h1, file$1, 19, 4, 508);
-    			add_location(h2, file$1, 24, 4, 643);
+    			attr_dev(span0, "class", "title");
+    			add_location(span0, file$1, 22, 16, 583);
+    			attr_dev(span1, "class", "titleBis");
+    			add_location(span1, file$1, 23, 16, 661);
+    			attr_dev(h1, "class", "svelte-j6tzvx");
+    			add_location(h1, file$1, 21, 12, 562);
+    			add_location(h2, file$1, 26, 12, 760);
+    			attr_dev(header, "class", "svelte-j6tzvx");
+    			add_location(header, file$1, 20, 8, 541);
+    			add_location(main, file$1, 29, 8, 834);
+    			attr_dev(div, "class", "scroll-ctn svelte-j6tzvx");
+    			add_location(div, file$1, 19, 4, 508);
     		},
     		m: function mount(target, anchor) {
-    			insert_hydration_dev(target, h1, anchor);
+    			insert_hydration_dev(target, div, anchor);
+    			append_hydration_dev(div, header);
+    			append_hydration_dev(header, h1);
     			append_hydration_dev(h1, span0);
     			append_hydration_dev(span0, t0);
     			append_hydration_dev(h1, t1);
     			append_hydration_dev(h1, span1);
     			append_hydration_dev(span1, t2);
-    			insert_hydration_dev(target, t3, anchor);
-    			insert_hydration_dev(target, h2, anchor);
+    			append_hydration_dev(header, t3);
+    			append_hydration_dev(header, h2);
     			append_hydration_dev(h2, t4);
-    			insert_hydration_dev(target, t5, anchor);
+    			append_hydration_dev(div, t5);
+    			append_hydration_dev(div, main);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
+    				each_blocks[i].m(main, null);
     			}
 
-    			insert_hydration_dev(target, each_1_anchor, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -4023,7 +4045,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block$1(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    						each_blocks[i].m(main, null);
     					}
     				}
 
@@ -4055,12 +4077,8 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(h1);
-    			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(h2);
-    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(div);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(each_1_anchor);
     		}
     	};
 
@@ -4075,7 +4093,7 @@ var app = (function () {
     	return block;
     }
 
-    // (32:12) {#if item.project.slug}
+    // (36:20) {#if item.project.slug}
     function create_if_block$1(ctx) {
     	let await_block_anchor;
     	let current;
@@ -4139,7 +4157,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(32:12) {#if item.project.slug}",
+    		source: "(36:20) {#if item.project.slug}",
     		ctx
     	});
 
@@ -4169,7 +4187,7 @@ var app = (function () {
     	return block;
     }
 
-    // (36:16) {:then project}
+    // (40:24) {:then project}
     function create_then_block_1(ctx) {
     	let link;
     	let t;
@@ -4226,14 +4244,14 @@ var app = (function () {
     		block,
     		id: create_then_block_1.name,
     		type: "then",
-    		source: "(36:16) {:then project}",
+    		source: "(40:24) {:then project}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:20) <Link to="{ project.url }">
+    // (42:28) <Link to="{ project.url }">
     function create_default_slot$2(ctx) {
     	let img;
     	let img_src_value;
@@ -4244,13 +4262,14 @@ var app = (function () {
     			this.h();
     		},
     		l: function claim(nodes) {
-    			img = claim_element(nodes, "IMG", { src: true, alt: true });
+    			img = claim_element(nodes, "IMG", { src: true, alt: true, class: true });
     			this.h();
     		},
     		h: function hydrate() {
     			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[10].data.image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*project*/ ctx[10].data.image.alt);
-    			add_location(img, file$1, 38, 24, 1132);
+    			attr_dev(img, "class", "img-project svelte-j6tzvx");
+    			add_location(img, file$1, 42, 32, 1375);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, img, anchor);
@@ -4265,14 +4284,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(38:20) <Link to=\\\"{ project.url }\\\">",
+    		source: "(42:28) <Link to=\\\"{ project.url }\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (34:55)                      <Loader />                 {:then project}
+    // (38:63)                              <Loader />                         {:then project}
     function create_pending_block_1(ctx) {
     	let loader;
     	let t;
@@ -4313,14 +4332,14 @@ var app = (function () {
     		block,
     		id: create_pending_block_1.name,
     		type: "pending",
-    		source: "(34:55)                      <Loader />                 {:then project}",
+    		source: "(38:63)                              <Loader />                         {:then project}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (31:8) {#each timelinePiece.items as item}
+    // (35:16) {#each timelinePiece.items as item}
     function create_each_block_1$1(ctx) {
     	let if_block_anchor;
     	let current;
@@ -4362,14 +4381,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(31:8) {#each timelinePiece.items as item}",
+    		source: "(35:16) {#each timelinePiece.items as item}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (27:4) {#each home.data.body as timelinePiece}
+    // (31:12) {#each home.data.body as timelinePiece}
     function create_each_block$1(ctx) {
     	let p;
     	let t0_value = asText(/*timelinePiece*/ ctx[4].primary.year) + "";
@@ -4408,7 +4427,7 @@ var app = (function () {
     			this.h();
     		},
     		l: function claim(nodes) {
-    			p = claim_element(nodes, "P", {});
+    			p = claim_element(nodes, "P", { class: true });
     			var p_nodes = children(p);
     			t0 = claim_text(p_nodes, t0_value);
     			p_nodes.forEach(detach_dev);
@@ -4424,7 +4443,8 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(p, file$1, 27, 8, 743);
+    			attr_dev(p, "class", "year svelte-j6tzvx");
+    			add_location(p, file$1, 31, 16, 909);
     			html_tag.a = t2;
     		},
     		m: function mount(target, anchor) {
@@ -4502,7 +4522,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(27:4) {#each home.data.body as timelinePiece}",
+    		source: "(31:12) {#each home.data.body as timelinePiece}",
     		ctx
     	});
 

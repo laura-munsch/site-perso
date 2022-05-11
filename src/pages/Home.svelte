@@ -17,34 +17,44 @@
     <Loader />
 {:then home}
 
-    <h1>
-        <span>{prismicH.asText(home.data.title)}</span>
-        <span>{prismicH.asText(home.data.titlebis)}</span>
-    </h1>
+    <div class="scroll-ctn">
+        <header>
+            <h1>
+                <span class="title">{prismicH.asText(home.data.title)}</span>
+                <span class="titleBis">{prismicH.asText(home.data.titlebis)}</span>
+            </h1>
 
-    <h2>{prismicH.asText(home.data.subtitle)}</h2>
+            <h2>{prismicH.asText(home.data.subtitle)}</h2>
+        </header>
 
-    {#each home.data.body as timelinePiece}
-        <p>{prismicH.asText(timelinePiece.primary.year)}</p>
-        {@html prismicH.asHTML(timelinePiece.primary.title)}
+        <main>
+            {#each home.data.body as timelinePiece}
+                <p class="year">{prismicH.asText(timelinePiece.primary.year)}</p>
+                {@html prismicH.asHTML(timelinePiece.primary.title)}
 
-        {#each timelinePiece.items as item}
-            {#if item.project.slug}
+                {#each timelinePiece.items as item}
+                    {#if item.project.slug}
 
-                {#await loadProject(item.project.slug)}
-                    <Loader />
-                {:then project} 
+                        {#await loadProject(item.project.slug)}
+                            <Loader />
+                        {:then project} 
 
-                    <Link to="{ project.url }">
-                        <img src="{ project.data.image.url }" alt="{ project.data.image.alt }">
-                    </Link>
+                            <Link to="{ project.url }">
+                                <img src="{ project.data.image.url }" alt="{ project.data.image.alt }" class="img-project">
+                            </Link>
 
-                {/await}
+                        {/await}
 
-            {/if}
-        {/each}
-    {/each}
+                    {/if}
+                {/each}
+            {/each}
+        </main>
+    </div>
 
 {:catch error}
     <pre>{error.message}</pre>
 {/await}
+
+<style type="text/scss">
+    @import "../styles/home.scss";
+</style>
