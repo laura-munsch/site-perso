@@ -12,3 +12,7 @@
         <Project slug="{ params.slug }" />
     </Route>
 </Router>
+
+<style global type="text/scss">
+    @import "styles/global.scss";
+</style>
