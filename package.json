@@ -23,5 +23,8 @@
         "svelte": "^3.0.0",
         "svelte-preprocess": "^4.10.6",
         "svelte-routing": "^1.6.0"
+    },
+    "dependencies": {
+        "@ashthornton/asscroll": "^2.0.7"
     }
 }
