@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "ApfelGrotesk";
+    font-weight: normal;
+    font-weight: 400;
+    src: url("/fonts/ApfelGrotezk-Regular.woff") format("woff"),
+        url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ApfelGrotesk";
+    font-weight: normal;
+    font-weight: 700;
+    src: url("/fonts/ApfelGrotezk-Fett.woff") format("woff"),
+        url("/fonts/ApfelGrotezk-Fett.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Blogh";
+    font-weight: normal;
+    font-weight: 900;
+    src: url("/fonts/Blogh.otf");
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-body;
+    color: $black;
+}
+
+h1 {
+    font-family: $font-heading;
+}

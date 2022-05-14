@@ -58,5 +58,5 @@
 {/await}
 
 <style type="text/scss">
-    @import "../styles/home.scss";
+    @import "../assets/styles/home.scss";
 </style>

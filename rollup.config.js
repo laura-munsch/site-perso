@@ -45,7 +45,7 @@ export default {
         svelte({
             preprocess: preprocess({
                 scss: {
-                    prependData: "@import 'src/styles/variables.scss';",
+                    prependData: "@import 'src/assets/styles/variables.scss';",
                 },
                 globalStyle: true,
             }),

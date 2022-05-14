@@ -14,5 +14,5 @@
 </Router>
 
 <style global type="text/scss">
-    @import "styles/global.scss";
+    @import "assets/styles/global.scss";
 </style>
