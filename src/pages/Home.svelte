@@ -29,24 +29,26 @@
 
         <main>
             {#each home.data.body as timelinePiece}
-                <p class="year">{prismicH.asText(timelinePiece.primary.year)}</p>
-                {@html prismicH.asHTML(timelinePiece.primary.title)}
+               <div class="project">
+                    <p class="year">{prismicH.asText(timelinePiece.primary.year)}</p>
+                    {@html prismicH.asHTML(timelinePiece.primary.title)}
 
-                {#each timelinePiece.items as item}
-                    {#if item.project.slug}
+                    {#each timelinePiece.items as item}
+                        {#if item.project.slug}
 
-                        {#await loadProject(item.project.slug)}
-                            <Loader />
-                        {:then project} 
+                            {#await loadProject(item.project.slug)}
+                                <Loader />
+                            {:then project} 
 
-                            <Link to="{ project.url }">
-                                <img src="{ project.data.image.url }" alt="{ project.data.image.alt }" class="img-project">
-                            </Link>
+                                <Link to="{ project.url }">
+                                    <img src="{ project.data.image.url }" alt="{ project.data.image.alt }" class="img-project">
+                                </Link>
 
-                        {/await}
+                            {/await}
 
-                    {/if}
-                {/each}
+                        {/if}
+                    {/each}
+               </div>
             {/each}
         </main>
     </div>

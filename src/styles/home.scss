@@ -2,19 +2,33 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: auto;
     height: 100vh;
+    display: grid;
+    grid-template-columns: 100vw auto;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 
 header {
     background-color: $beige;
     height: 100%;
+    width: 100vw;
+    flex-shrink: 0;
 }
 
 h1 {
     color: $pink;
     font-size: #{(160/16)}rem;
     margin: 0;
+}
+
+.project {
+    width: 500px;
+}
+
+main {
+    display: flex;
 }
 
 .year {
