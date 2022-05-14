@@ -21,7 +21,7 @@
         <header>
             <h1>
                 <span class="title">{prismicH.asText(home.data.title)}</span>
-                <span class="titleBis">{prismicH.asText(home.data.titlebis)}</span>
+                <span class="title-bis">{prismicH.asText(home.data.titlebis)}</span>
             </h1>
 
             <h2>{prismicH.asText(home.data.subtitle)}</h2>
@@ -29,9 +29,11 @@
 
         <main>
             {#each home.data.body as timelinePiece}
-               <div class="project">
+                <div class="project">
                     <p class="year">{prismicH.asText(timelinePiece.primary.year)}</p>
-                    {@html prismicH.asHTML(timelinePiece.primary.title)}
+                    <div class="description">
+                        {@html prismicH.asHTML(timelinePiece.primary.title)}
+                    </div>
 
                     {#each timelinePiece.items as item}
                         {#if item.project.slug}
@@ -48,7 +50,7 @@
 
                         {/if}
                     {/each}
-               </div>
+                </div>
             {/each}
         </main>
     </div>

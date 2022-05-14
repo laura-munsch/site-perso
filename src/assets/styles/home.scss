@@ -15,20 +15,51 @@ header {
     height: 100%;
     width: 100vw;
     flex-shrink: 0;
+    display: grid;
+    place-content: center;
+    position: relative;
 }
 
 h1 {
     color: $pink;
     font-size: #{(160/16)}rem;
     margin: 0;
+    max-width: 800px;
+    line-height: 70%;
+    text-align: center;
+
+    .title {
+        display: inline-block;
+        transform: translateX(-30%);
+    }
+
+    .title-bis {
+        display: inline-block;
+        transform: translateX(10%);
+    }
+}
+
+h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main {
+    display: flex;
+    align-items: flex-end;
+    gap: 85px;
+    padding: 0 190px 20vh;
 }
 
 .project {
     width: 500px;
 }
 
-main {
-    display: flex;
+.description {
+    width: 360px;
+    margin-bottom: 80px;
 }
 
 .year {
@@ -36,6 +67,7 @@ main {
     color: $white;
     text-shadow: 1px 0 0 $purple, 0 1px 0 $purple, -1px 0 0 $purple,
         0 -1px 0 $purple;
+    margin: 0 0 -45px 200px;
 }
 
 .img-project {
@@ -44,6 +76,10 @@ main {
     object-fit: cover;
     border-radius: 500px;
     transition: width 0.3s;
+
+    &:first-of-type {
+        margin-left: 40px;
+    }
 
     &:hover {
         width: 500px;
