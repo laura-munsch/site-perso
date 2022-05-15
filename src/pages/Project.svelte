@@ -14,28 +14,36 @@
    <Loader />
 {:then project}
 
-    <Link to="/">Accueil</Link>
+    <article class="ctn">
+        <Link to="/" class="close">Accueil</Link>
 
-    <h1>{ prismicH.asText(project.data.title) }</h1>
+        <div class="description">
+            <h1>{ prismicH.asText(project.data.title) }</h1>
 
-    {#if project.tags }
-        <ul>
-            {#each project.tags as tag}
-                <li>{ tag }</li>
-            {/each}
-        </ul>
-    {/if}
+            {#if project.tags }
+                <ul class="tags">
+                    {#each project.tags as tag}
+                        <li class="tag">{ tag }</li>
+                    {/each}
+                </ul>
+            {/if}
 
-    {@html prismicH.asHTML(project.data.description) }
+            {@html prismicH.asHTML(project.data.description) }
+        </div>
 
-    {#if project.data.slider }
-        {#each project.data.slider as slide}
-            {@html prismicH.asHTML(slide.text) }
-
-            <img src="{ slide.image.url }" alt="{ slide.image.alt }">
-        {/each}
-    {/if}
+        <div class="slider">
+            {#if project.data.slider }
+                {#each project.data.slider as slide}
+                    <img src="{ slide.image.url }" alt="{ slide.image.alt }">
+                {/each}
+            {/if}
+        </div>
+    </article>
 
 {:catch error}
     <pre>{error.message}</pre>
 {/await}
+
+<style type="text/scss">
+    @import "../assets/styles/project.scss";
+</style>

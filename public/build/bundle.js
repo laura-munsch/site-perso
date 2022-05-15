@@ -5600,7 +5600,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (77:8) {:catch error}
+    // (78:8) {:catch error}
     function create_catch_block_1(ctx) {
     	let pre;
     	let t_value = /*error*/ ctx[14].message + "";
@@ -5620,7 +5620,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(pre, file$1, 77, 12, 2443);
+    			add_location(pre, file$1, 78, 12, 2500);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, pre, anchor);
@@ -5638,14 +5638,14 @@ var app = (function () {
     		block,
     		id: create_catch_block_1.name,
     		type: "catch",
-    		source: "(77:8) {:catch error}",
+    		source: "(78:8) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (39:8) {:then home}
+    // (40:8) {:then home}
     function create_then_block$1(ctx) {
     	let header;
     	let h1;
@@ -5730,17 +5730,17 @@ var app = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(span0, "class", "title svelte-192t5e9");
-    			add_location(span0, file$1, 42, 20, 1075);
+    			add_location(span0, file$1, 43, 20, 1100);
     			attr_dev(span1, "class", "title-bis svelte-192t5e9");
-    			add_location(span1, file$1, 43, 20, 1157);
+    			add_location(span1, file$1, 44, 20, 1182);
     			attr_dev(h1, "class", "svelte-192t5e9");
-    			add_location(h1, file$1, 41, 16, 1050);
+    			add_location(h1, file$1, 42, 16, 1075);
     			attr_dev(h2, "class", "svelte-192t5e9");
-    			add_location(h2, file$1, 46, 16, 1265);
+    			add_location(h2, file$1, 47, 16, 1290);
     			attr_dev(header, "class", "svelte-192t5e9");
-    			add_location(header, file$1, 40, 12, 1025);
+    			add_location(header, file$1, 41, 12, 1050);
     			attr_dev(main, "class", "svelte-192t5e9");
-    			add_location(main, file$1, 49, 12, 1347);
+    			add_location(main, file$1, 50, 12, 1372);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, header, anchor);
@@ -5763,7 +5763,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*prismicQuery, loadProject, prismicH*/ 6) {
+    			if (dirty & /*prismicQuery, loadProject, asscroll, prismicH*/ 13) {
     				each_value = /*home*/ ctx[6].data.body;
     				validate_each_argument(each_value);
     				let i;
@@ -5821,14 +5821,14 @@ var app = (function () {
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(39:8) {:then home}",
+    		source: "(40:8) {:then home}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (59:28) {#if item.project.slug}
+    // (60:28) {#if item.project.slug}
     function create_if_block$1(ctx) {
     	let await_block_anchor;
     	let current;
@@ -5845,7 +5845,7 @@ var app = (function () {
     		blocks: [,,,]
     	};
 
-    	handle_promise(/*loadProject*/ ctx[2](/*item*/ ctx[10].project.slug), info);
+    	handle_promise(/*loadProject*/ ctx[3](/*item*/ ctx[10].project.slug), info);
 
     	const block = {
     		c: function create() {
@@ -5892,7 +5892,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(59:28) {#if item.project.slug}",
+    		source: "(60:28) {#if item.project.slug}",
     		ctx
     	});
 
@@ -5922,7 +5922,7 @@ var app = (function () {
     	return block;
     }
 
-    // (63:32) {:then project}
+    // (64:32) {:then project}
     function create_then_block_1(ctx) {
     	let link;
     	let current;
@@ -5936,6 +5936,10 @@ var app = (function () {
     			$$inline: true
     		});
 
+    	link.$on("click", function () {
+    		if (is_function(/*asscroll*/ ctx[0].disable())) /*asscroll*/ ctx[0].disable().apply(this, arguments);
+    	});
+
     	const block = {
     		c: function create() {
     			create_component(link.$$.fragment);
@@ -5947,7 +5951,8 @@ var app = (function () {
     			mount_component(link, target, anchor);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
     			const link_changes = {};
 
     			if (dirty & /*$$scope*/ 32768) {
@@ -5974,14 +5979,14 @@ var app = (function () {
     		block,
     		id: create_then_block_1.name,
     		type: "then",
-    		source: "(63:32) {:then project}",
+    		source: "(64:32) {:then project}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (65:36) <Link to="{ project.url }">
+    // (66:36) <Link to="{ project.url }" on:click="{asscroll.disable()}">
     function create_default_slot$2(ctx) {
     	let img;
     	let img_src_value;
@@ -5999,7 +6004,7 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[13].data.image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*project*/ ctx[13].data.image.alt);
     			attr_dev(img, "class", "img-project svelte-192t5e9");
-    			add_location(img, file$1, 65, 40, 2091);
+    			add_location(img, file$1, 66, 40, 2148);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, img, anchor);
@@ -6014,14 +6019,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(65:36) <Link to=\\\"{ project.url }\\\">",
+    		source: "(66:36) <Link to=\\\"{ project.url }\\\" on:click=\\\"{asscroll.disable()}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:71)                                      <Loader />                                 {:then project}
+    // (62:71)                                      <Loader />                                 {:then project}
     function create_pending_block_1(ctx) {
     	let loader;
     	let current;
@@ -6057,14 +6062,14 @@ var app = (function () {
     		block,
     		id: create_pending_block_1.name,
     		type: "pending",
-    		source: "(61:71)                                      <Loader />                                 {:then project}",
+    		source: "(62:71)                                      <Loader />                                 {:then project}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (58:24) {#each timelinePiece.items as item}
+    // (59:24) {#each timelinePiece.items as item}
     function create_each_block_1$1(ctx) {
     	let if_block_anchor;
     	let current;
@@ -6106,14 +6111,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(58:24) {#each timelinePiece.items as item}",
+    		source: "(59:24) {#each timelinePiece.items as item}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (51:16) {#each home.data.body as timelinePiece}
+    // (52:16) {#each home.data.body as timelinePiece}
     function create_each_block$1(ctx) {
     	let div1;
     	let p;
@@ -6176,11 +6181,11 @@ var app = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(p, "class", "year svelte-192t5e9");
-    			add_location(p, file$1, 52, 24, 1476);
+    			add_location(p, file$1, 53, 24, 1501);
     			attr_dev(div0, "class", "description svelte-192t5e9");
-    			add_location(div0, file$1, 53, 24, 1566);
+    			add_location(div0, file$1, 54, 24, 1591);
     			attr_dev(div1, "class", "project svelte-192t5e9");
-    			add_location(div1, file$1, 51, 20, 1430);
+    			add_location(div1, file$1, 52, 20, 1455);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div1, anchor);
@@ -6199,7 +6204,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*loadProject, prismicQuery*/ 6) {
+    			if (dirty & /*loadProject, prismicQuery, asscroll*/ 13) {
     				each_value_1 = /*timelinePiece*/ ctx[7].items;
     				validate_each_argument(each_value_1);
     				let i;
@@ -6255,14 +6260,14 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(51:16) {#each home.data.body as timelinePiece}",
+    		source: "(52:16) {#each home.data.body as timelinePiece}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:29)              <Loader />         {:then home}
+    // (38:29)              <Loader />         {:then home}
     function create_pending_block$1(ctx) {
     	let loader;
     	let current;
@@ -6298,7 +6303,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(37:29)              <Loader />         {:then home}",
+    		source: "(38:29)              <Loader />         {:then home}",
     		ctx
     	});
 
@@ -6325,7 +6330,7 @@ var app = (function () {
     		blocks: [,,,]
     	};
 
-    	handle_promise(/*prismicQuery*/ ctx[1], info);
+    	handle_promise(/*prismicQuery*/ ctx[2], info);
 
     	const block = {
     		c: function create() {
@@ -6346,10 +6351,10 @@ var app = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(div0, "class", "scroll-ctn svelte-192t5e9");
-    			attr_dev(div0, "style", /*cssVar*/ ctx[0]);
-    			add_location(div0, file$1, 34, 4, 895);
+    			attr_dev(div0, "style", /*cssVar*/ ctx[1]);
+    			add_location(div0, file$1, 35, 4, 920);
     			attr_dev(div1, "asscroll-container", "");
-    			add_location(div1, file$1, 33, 0, 839);
+    			add_location(div1, file$1, 34, 0, 864);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div1, anchor);
@@ -6360,7 +6365,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(div1, "load", /*initASScroll*/ ctx[3](), false, false, false);
+    				dispose = listen_dev(div1, "load", /*initASScroll*/ ctx[4](), false, false, false);
     				mounted = true;
     			}
     		},
@@ -6368,8 +6373,8 @@ var app = (function () {
     			ctx = new_ctx;
     			update_await_block_branch(info, ctx, dirty);
 
-    			if (!current || dirty & /*cssVar*/ 1) {
-    				attr_dev(div0, "style", /*cssVar*/ ctx[0]);
+    			if (!current || dirty & /*cssVar*/ 2) {
+    				attr_dev(div0, "style", /*cssVar*/ ctx[1]);
     			}
     		},
     		i: function intro(local) {
@@ -6423,11 +6428,11 @@ var app = (function () {
     	let cssVar;
 
     	function initASScroll() {
-    		asscroll = new ASScroll();
-    		asscroll.enable({ horizontalScroll: true });
+    		$$invalidate(0, asscroll = new ASScroll());
+    		asscroll.enable({ horizontalScroll: true, reset: true });
 
     		asscroll.on("scroll", scrollPos => {
-    			$$invalidate(0, cssVar = `--scroll-pos:${scrollPos}px`);
+    			$$invalidate(1, cssVar = `--scroll-pos:${scrollPos}px`);
     		});
     	}
 
@@ -6452,15 +6457,15 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('asscroll' in $$props) asscroll = $$props.asscroll;
-    		if ('cssVar' in $$props) $$invalidate(0, cssVar = $$props.cssVar);
+    		if ('asscroll' in $$props) $$invalidate(0, asscroll = $$props.asscroll);
+    		if ('cssVar' in $$props) $$invalidate(1, cssVar = $$props.cssVar);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [cssVar, prismicQuery, loadProject, initASScroll];
+    	return [asscroll, cssVar, prismicQuery, loadProject, initASScroll];
     }
 
     class Home extends SvelteComponentDev {
@@ -6492,7 +6497,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (39:0) {:catch error}
+    // (43:0) {:catch error}
     function create_catch_block(ctx) {
     	let pre;
     	let t_value = /*error*/ ctx[10].message + "";
@@ -6512,7 +6517,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(pre, file, 39, 4, 938);
+    			add_location(pre, file, 43, 4, 1177);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, pre, anchor);
@@ -6530,7 +6535,7 @@ var app = (function () {
     		block,
     		id: create_catch_block.name,
     		type: "catch",
-    		source: "(39:0) {:catch error}",
+    		source: "(43:0) {:catch error}",
     		ctx
     	});
 
@@ -6539,8 +6544,10 @@ var app = (function () {
 
     // (15:0) {:then project}
     function create_then_block(ctx) {
+    	let article;
     	let link;
     	let t0;
+    	let div0;
     	let h1;
     	let t1_value = asText(/*project*/ ctx[3].data.title) + "";
     	let t1;
@@ -6549,12 +6556,13 @@ var app = (function () {
     	let html_tag;
     	let raw_value = asHTML(/*project*/ ctx[3].data.description) + "";
     	let t4;
-    	let if_block1_anchor;
+    	let div1;
     	let current;
 
     	link = new Link({
     			props: {
     				to: "/",
+    				class: "close",
     				$$slots: { default: [create_default_slot$1] },
     				$$scope: { ctx }
     			},
@@ -6566,8 +6574,10 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			article = element("article");
     			create_component(link.$$.fragment);
     			t0 = space();
+    			div0 = element("div");
     			h1 = element("h1");
     			t1 = text(t1_value);
     			t2 = space();
@@ -6575,42 +6585,59 @@ var app = (function () {
     			t3 = space();
     			html_tag = new HtmlTagHydration(false);
     			t4 = space();
+    			div1 = element("div");
     			if (if_block1) if_block1.c();
-    			if_block1_anchor = empty();
     			this.h();
     		},
     		l: function claim(nodes) {
-    			claim_component(link.$$.fragment, nodes);
-    			t0 = claim_space(nodes);
-    			h1 = claim_element(nodes, "H1", {});
+    			article = claim_element(nodes, "ARTICLE", { class: true });
+    			var article_nodes = children(article);
+    			claim_component(link.$$.fragment, article_nodes);
+    			t0 = claim_space(article_nodes);
+    			div0 = claim_element(article_nodes, "DIV", { class: true });
+    			var div0_nodes = children(div0);
+    			h1 = claim_element(div0_nodes, "H1", { class: true });
     			var h1_nodes = children(h1);
     			t1 = claim_text(h1_nodes, t1_value);
     			h1_nodes.forEach(detach_dev);
-    			t2 = claim_space(nodes);
-    			if (if_block0) if_block0.l(nodes);
-    			t3 = claim_space(nodes);
-    			html_tag = claim_html_tag(nodes, false);
-    			t4 = claim_space(nodes);
-    			if (if_block1) if_block1.l(nodes);
-    			if_block1_anchor = empty();
+    			t2 = claim_space(div0_nodes);
+    			if (if_block0) if_block0.l(div0_nodes);
+    			t3 = claim_space(div0_nodes);
+    			html_tag = claim_html_tag(div0_nodes, false);
+    			div0_nodes.forEach(detach_dev);
+    			t4 = claim_space(article_nodes);
+    			div1 = claim_element(article_nodes, "DIV", { class: true });
+    			var div1_nodes = children(div1);
+    			if (if_block1) if_block1.l(div1_nodes);
+    			div1_nodes.forEach(detach_dev);
+    			article_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(h1, file, 18, 4, 435);
-    			html_tag.a = t4;
+    			attr_dev(h1, "class", "svelte-y1e4wj");
+    			add_location(h1, file, 20, 12, 521);
+    			html_tag.a = null;
+    			attr_dev(div0, "class", "description svelte-y1e4wj");
+    			add_location(div0, file, 19, 8, 483);
+    			attr_dev(div1, "class", "slider svelte-y1e4wj");
+    			add_location(div1, file, 33, 8, 894);
+    			attr_dev(article, "class", "ctn svelte-y1e4wj");
+    			add_location(article, file, 16, 4, 402);
     		},
     		m: function mount(target, anchor) {
-    			mount_component(link, target, anchor);
-    			insert_hydration_dev(target, t0, anchor);
-    			insert_hydration_dev(target, h1, anchor);
+    			insert_hydration_dev(target, article, anchor);
+    			mount_component(link, article, null);
+    			append_hydration_dev(article, t0);
+    			append_hydration_dev(article, div0);
+    			append_hydration_dev(div0, h1);
     			append_hydration_dev(h1, t1);
-    			insert_hydration_dev(target, t2, anchor);
-    			if (if_block0) if_block0.m(target, anchor);
-    			insert_hydration_dev(target, t3, anchor);
-    			html_tag.m(raw_value, target, anchor);
-    			insert_hydration_dev(target, t4, anchor);
-    			if (if_block1) if_block1.m(target, anchor);
-    			insert_hydration_dev(target, if_block1_anchor, anchor);
+    			append_hydration_dev(div0, t2);
+    			if (if_block0) if_block0.m(div0, null);
+    			append_hydration_dev(div0, t3);
+    			html_tag.m(raw_value, div0);
+    			append_hydration_dev(article, t4);
+    			append_hydration_dev(article, div1);
+    			if (if_block1) if_block1.m(div1, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -6634,16 +6661,10 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			destroy_component(link, detaching);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(h1);
-    			if (detaching) detach_dev(t2);
-    			if (if_block0) if_block0.d(detaching);
-    			if (detaching) detach_dev(t3);
-    			if (detaching) html_tag.d();
-    			if (detaching) detach_dev(t4);
-    			if (if_block1) if_block1.d(detaching);
-    			if (detaching) detach_dev(if_block1_anchor);
+    			if (detaching) detach_dev(article);
+    			destroy_component(link);
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
     		}
     	};
 
@@ -6658,7 +6679,7 @@ var app = (function () {
     	return block;
     }
 
-    // (17:4) <Link to="/">
+    // (18:8) <Link to="/" class="close">
     function create_default_slot$1(ctx) {
     	let t;
 
@@ -6681,14 +6702,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(17:4) <Link to=\\\"/\\\">",
+    		source: "(18:8) <Link to=\\\"/\\\" class=\\\"close\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (21:4) {#if project.tags }
+    // (23:12) {#if project.tags }
     function create_if_block_1(ctx) {
     	let ul;
     	let each_value_1 = /*project*/ ctx[3].tags;
@@ -6710,7 +6731,7 @@ var app = (function () {
     			this.h();
     		},
     		l: function claim(nodes) {
-    			ul = claim_element(nodes, "UL", {});
+    			ul = claim_element(nodes, "UL", { class: true });
     			var ul_nodes = children(ul);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -6721,7 +6742,8 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(ul, file, 21, 8, 517);
+    			attr_dev(ul, "class", "tags svelte-y1e4wj");
+    			add_location(ul, file, 23, 16, 619);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, ul, anchor);
@@ -6765,14 +6787,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(21:4) {#if project.tags }",
+    		source: "(23:12) {#if project.tags }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (23:12) {#each project.tags as tag}
+    // (25:20) {#each project.tags as tag}
     function create_each_block_1(ctx) {
     	let li;
     	let t_value = /*tag*/ ctx[7] + "";
@@ -6785,14 +6807,15 @@ var app = (function () {
     			this.h();
     		},
     		l: function claim(nodes) {
-    			li = claim_element(nodes, "LI", {});
+    			li = claim_element(nodes, "LI", { class: true });
     			var li_nodes = children(li);
     			t = claim_text(li_nodes, t_value);
     			li_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(li, file, 23, 16, 578);
+    			attr_dev(li, "class", "tag svelte-y1e4wj");
+    			add_location(li, file, 25, 24, 709);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, li, anchor);
@@ -6808,14 +6831,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(23:12) {#each project.tags as tag}",
+    		source: "(25:20) {#each project.tags as tag}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (31:4) {#if project.data.slider }
+    // (35:12) {#if project.data.slider }
     function create_if_block(ctx) {
     	let each_1_anchor;
     	let each_value = /*project*/ ctx[3].data.slider;
@@ -6849,7 +6872,7 @@ var app = (function () {
     			insert_hydration_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*prismicQuery, prismicH*/ 1) {
+    			if (dirty & /*prismicQuery*/ 1) {
     				each_value = /*project*/ ctx[3].data.slider;
     				validate_each_argument(each_value);
     				let i;
@@ -6883,49 +6906,38 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(31:4) {#if project.data.slider }",
+    		source: "(35:12) {#if project.data.slider }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (32:8) {#each project.data.slider as slide}
+    // (36:16) {#each project.data.slider as slide}
     function create_each_block(ctx) {
-    	let html_tag;
-    	let raw_value = asHTML(/*slide*/ ctx[4].text) + "";
-    	let t;
     	let img;
     	let img_src_value;
 
     	const block = {
     		c: function create() {
-    			html_tag = new HtmlTagHydration(false);
-    			t = space();
     			img = element("img");
     			this.h();
     		},
     		l: function claim(nodes) {
-    			html_tag = claim_html_tag(nodes, false);
-    			t = claim_space(nodes);
-    			img = claim_element(nodes, "IMG", { src: true, alt: true });
+    			img = claim_element(nodes, "IMG", { src: true, alt: true, class: true });
     			this.h();
     		},
     		h: function hydrate() {
-    			html_tag.a = t;
     			if (!src_url_equal(img.src, img_src_value = /*slide*/ ctx[4].image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*slide*/ ctx[4].image.alt);
-    			add_location(img, file, 34, 12, 834);
+    			attr_dev(img, "class", "svelte-y1e4wj");
+    			add_location(img, file, 36, 20, 1027);
     		},
     		m: function mount(target, anchor) {
-    			html_tag.m(raw_value, target, anchor);
-    			insert_hydration_dev(target, t, anchor);
     			insert_hydration_dev(target, img, anchor);
     		},
     		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) html_tag.d();
-    			if (detaching) detach_dev(t);
     			if (detaching) detach_dev(img);
     		}
     	};
@@ -6934,7 +6946,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(32:8) {#each project.data.slider as slide}",
+    		source: "(36:16) {#each project.data.slider as slide}",
     		ctx
     	});
 

@@ -22,7 +22,8 @@
         asscroll = new ASScroll();
 
         asscroll.enable({
-            horizontalScroll: true
+            horizontalScroll: true,
+            reset: true
         });
 
         asscroll.on("scroll", (scrollPos) => {
@@ -62,7 +63,7 @@
                                     <Loader />
                                 {:then project} 
 
-                                    <Link to="{ project.url }">
+                                    <Link to="{ project.url }" on:click="{asscroll.disable()}">
                                         <img src="{ project.data.image.url }" alt="{ project.data.image.alt }" class="img-project">
                                     </Link>
 
