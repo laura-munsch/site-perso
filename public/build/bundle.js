@@ -5699,7 +5699,7 @@ var app = (function () {
     		l: function claim(nodes) {
     			header = claim_element(nodes, "HEADER", { class: true });
     			var header_nodes = children(header);
-    			h1 = claim_element(header_nodes, "H1", { style: true, class: true });
+    			h1 = claim_element(header_nodes, "H1", { class: true });
     			var h1_nodes = children(h1);
     			span0 = claim_element(h1_nodes, "SPAN", { class: true });
     			var span0_nodes = children(span0);
@@ -5729,18 +5729,17 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(span0, "class", "title svelte-1q89k7t");
+    			attr_dev(span0, "class", "title svelte-192t5e9");
     			add_location(span0, file$1, 42, 20, 1075);
-    			attr_dev(span1, "class", "title-bis svelte-1q89k7t");
+    			attr_dev(span1, "class", "title-bis svelte-192t5e9");
     			add_location(span1, file$1, 43, 20, 1157);
-    			attr_dev(h1, "style", /*cssVar*/ ctx[0]);
-    			attr_dev(h1, "class", "svelte-1q89k7t");
-    			add_location(h1, file$1, 41, 16, 1033);
-    			attr_dev(h2, "class", "svelte-1q89k7t");
+    			attr_dev(h1, "class", "svelte-192t5e9");
+    			add_location(h1, file$1, 41, 16, 1050);
+    			attr_dev(h2, "class", "svelte-192t5e9");
     			add_location(h2, file$1, 46, 16, 1265);
-    			attr_dev(header, "class", "svelte-1q89k7t");
-    			add_location(header, file$1, 40, 12, 1008);
-    			attr_dev(main, "class", "svelte-1q89k7t");
+    			attr_dev(header, "class", "svelte-192t5e9");
+    			add_location(header, file$1, 40, 12, 1025);
+    			attr_dev(main, "class", "svelte-192t5e9");
     			add_location(main, file$1, 49, 12, 1347);
     		},
     		m: function mount(target, anchor) {
@@ -5764,10 +5763,6 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*cssVar*/ 1) {
-    				attr_dev(h1, "style", /*cssVar*/ ctx[0]);
-    			}
-
     			if (dirty & /*prismicQuery, loadProject, prismicH*/ 6) {
     				each_value = /*home*/ ctx[6].data.body;
     				validate_each_argument(each_value);
@@ -6003,7 +5998,7 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[13].data.image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*project*/ ctx[13].data.image.alt);
-    			attr_dev(img, "class", "img-project svelte-1q89k7t");
+    			attr_dev(img, "class", "img-project svelte-192t5e9");
     			add_location(img, file$1, 65, 40, 2091);
     		},
     		m: function mount(target, anchor) {
@@ -6180,11 +6175,11 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(p, "class", "year svelte-1q89k7t");
+    			attr_dev(p, "class", "year svelte-192t5e9");
     			add_location(p, file$1, 52, 24, 1476);
-    			attr_dev(div0, "class", "description svelte-1q89k7t");
+    			attr_dev(div0, "class", "description svelte-192t5e9");
     			add_location(div0, file$1, 53, 24, 1566);
-    			attr_dev(div1, "class", "project svelte-1q89k7t");
+    			attr_dev(div1, "class", "project svelte-192t5e9");
     			add_location(div1, file$1, 51, 20, 1430);
     		},
     		m: function mount(target, anchor) {
@@ -6342,7 +6337,7 @@ var app = (function () {
     		l: function claim(nodes) {
     			div1 = claim_element(nodes, "DIV", { "asscroll-container": true });
     			var div1_nodes = children(div1);
-    			div0 = claim_element(div1_nodes, "DIV", { class: true });
+    			div0 = claim_element(div1_nodes, "DIV", { class: true, style: true });
     			var div0_nodes = children(div0);
     			info.block.l(div0_nodes);
     			div0_nodes.forEach(detach_dev);
@@ -6350,7 +6345,8 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(div0, "class", "scroll-ctn svelte-1q89k7t");
+    			attr_dev(div0, "class", "scroll-ctn svelte-192t5e9");
+    			attr_dev(div0, "style", /*cssVar*/ ctx[0]);
     			add_location(div0, file$1, 34, 4, 895);
     			attr_dev(div1, "asscroll-container", "");
     			add_location(div1, file$1, 33, 0, 839);
@@ -6371,6 +6367,10 @@ var app = (function () {
     		p: function update(new_ctx, [dirty]) {
     			ctx = new_ctx;
     			update_await_block_branch(info, ctx, dirty);
+
+    			if (!current || dirty & /*cssVar*/ 1) {
+    				attr_dev(div0, "style", /*cssVar*/ ctx[0]);
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;

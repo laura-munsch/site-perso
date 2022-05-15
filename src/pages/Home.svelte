@@ -32,14 +32,14 @@
 </script>
 
 <div asscroll-container on:load="{initASScroll()}">
-    <div class="scroll-ctn">
+    <div class="scroll-ctn" style="{cssVar}">
 
         {#await prismicQuery}
             <Loader />
         {:then home}
 
             <header>
-                <h1 style="{cssVar}">
+                <h1>
                     <span class="title">{prismicH.asText(home.data.title)}</span>
                     <span class="title-bis">{prismicH.asText(home.data.titlebis)}</span>
                 </h1>

@@ -58,6 +58,15 @@ main {
 .description {
     width: 360px;
     margin-bottom: 80px;
+    font-size: #{(20/16)}rem;
+    line-height: 125%;
+    position: relative;
+    z-index: 2;
+
+    :global strong {
+        font-size: #{(26/16)}rem;
+        line-height: 125%;
+    }
 }
 
 .year {
@@ -65,7 +74,8 @@ main {
     color: $white;
     text-shadow: 1px 0 0 $purple, 0 1px 0 $purple, -1px 0 0 $purple,
         0 -1px 0 $purple;
-    margin: 0 0 -45px 200px;
+    margin: 0 0 -60px 200px;
+    transform: translateX(calc(var(--scroll-pos) * -0.05));
 }
 
 .img-project {
@@ -74,6 +84,7 @@ main {
     object-fit: cover;
     border-radius: 500px;
     transition: width 0.3s;
+    display: inline-block;
 
     &:first-of-type {
         margin-left: 40px;
