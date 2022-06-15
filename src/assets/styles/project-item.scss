@@ -1,0 +1,94 @@
+.container {
+    width: 300px;
+    height: 300px;
+    border-radius: 500px;
+    transition: width 0.5s;
+    position: relative;
+    overflow: hidden;
+
+    &:first-of-type {
+        margin-left: 40px;
+    }
+
+    &:before,
+    &::after {
+        content: "";
+        width: 100%;
+        height: 50%;
+        display: block;
+        mix-blend-mode: screen;
+        position: absolute;
+        left: 0;
+        transition: transform 0.4s;
+    }
+
+    &::before {
+        background-color: $orange;
+        top: 0;
+        transform: translateY(-110%) rotate(-4deg);
+    }
+
+    &::after {
+        background-color: $pink;
+        bottom: 0;
+        transform: translateY(120%) rotate(-10deg);
+    }
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    object-fit: cover;
+}
+
+.link {
+    display: inline-block;
+    position: absolute;
+    background-color: $white;
+    padding: 7px;
+    font-weight: 700;
+    font-size: #{(30/16)}rem;
+    line-height: 80%;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &--external {
+        top: 12%;
+        left: 20%;
+        width: 110px;
+        transform: rotate(-6deg);
+    }
+
+    &--internal {
+        bottom: 7%;
+        right: 15%;
+        width: 120px;
+        transform: rotate(7deg);
+    }
+}
+
+// animation
+.container:hover {
+    width: 500px;
+
+    &::before,
+    &::after {
+        height: 50%;
+        transform: translateY(0) rotate(0);
+    }
+
+    &::before {
+        transition: transform 0.6s 0.2s;
+    }
+
+    &::after {
+        transition: transform 0.6s 0.3s;
+    }
+
+    .link {
+        opacity: 1;
+        transition: opacity 0.3s 0.5s;
+    }
+}

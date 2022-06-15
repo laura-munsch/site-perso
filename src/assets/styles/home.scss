@@ -77,20 +77,3 @@ main {
     margin: 0 0 -60px 200px;
     transform: translateX(calc(var(--scroll-pos) * -0.05));
 }
-
-.img-project {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 500px;
-    transition: width 0.3s;
-    display: inline-block;
-
-    &:first-of-type {
-        margin-left: 40px;
-    }
-
-    &:hover {
-        width: 500px;
-    }
-}
