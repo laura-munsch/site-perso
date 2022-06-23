@@ -4008,6 +4008,7 @@ var app = (function () {
     	let t0;
     	let t1;
     	let a;
+    	let span;
     	let t2;
     	let a_href_value;
     	let mounted;
@@ -4022,6 +4023,7 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t1 = space();
     			a = element("a");
+    			span = element("span");
     			t2 = text("En savoir plus");
     			this.h();
     		},
@@ -4034,7 +4036,10 @@ var app = (function () {
     			t1 = claim_space(div_nodes);
     			a = claim_element(div_nodes, "A", { href: true, class: true });
     			var a_nodes = children(a);
-    			t2 = claim_text(a_nodes, "En savoir plus");
+    			span = claim_element(a_nodes, "SPAN", { class: true });
+    			var span_nodes = children(span);
+    			t2 = claim_text(span_nodes, "En savoir plus");
+    			span_nodes.forEach(detach_dev);
     			a_nodes.forEach(detach_dev);
     			div_nodes.forEach(detach_dev);
     			this.h();
@@ -4042,12 +4047,14 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[3].data.image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = /*project*/ ctx[3].data.image.alt);
-    			attr_dev(img, "class", "image svelte-qgqdyn");
+    			attr_dev(img, "class", "image svelte-ouaoz9");
     			add_location(img, file$3, 19, 12, 490);
+    			attr_dev(span, "class", "link-text link-text--internal svelte-ouaoz9");
+    			add_location(span, file$3, 39, 16, 1142);
     			attr_dev(a, "href", a_href_value = /*project*/ ctx[3].url);
-    			attr_dev(a, "class", "link link--internal svelte-qgqdyn");
-    			add_location(a, file$3, 35, 12, 933);
-    			attr_dev(div, "class", "container svelte-qgqdyn");
+    			attr_dev(a, "class", "link link--internal svelte-ouaoz9");
+    			add_location(a, file$3, 38, 12, 1066);
+    			attr_dev(div, "class", "container svelte-ouaoz9");
     			add_location(div, file$3, 18, 8, 454);
     		},
     		m: function mount(target, anchor) {
@@ -4057,7 +4064,8 @@ var app = (function () {
     			if (if_block) if_block.m(div, null);
     			append_hydration_dev(div, t1);
     			append_hydration_dev(div, a);
-    			append_hydration_dev(a, t2);
+    			append_hydration_dev(a, span);
+    			append_hydration_dev(span, t2);
 
     			if (!mounted) {
     				dispose = action_destroyer(link$1.call(null, a));
@@ -4114,6 +4122,7 @@ var app = (function () {
     // (26:12) {#if project.data.direct_link.url}
     function create_if_block_1$1(ctx) {
     	let a;
+    	let span;
     	let t;
     	let a_href_value;
     	let mounted;
@@ -4122,24 +4131,32 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			a = element("a");
+    			span = element("span");
     			t = text("Voir le site");
     			this.h();
     		},
     		l: function claim(nodes) {
-    			a = claim_element(nodes, "A", { href: true, class: true });
+    			a = claim_element(nodes, "A", { href: true, class: true, target: true });
     			var a_nodes = children(a);
-    			t = claim_text(a_nodes, "Voir le site");
+    			span = claim_element(a_nodes, "SPAN", { class: true });
+    			var span_nodes = children(span);
+    			t = claim_text(span_nodes, "Voir le site");
+    			span_nodes.forEach(detach_dev);
     			a_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
+    			attr_dev(span, "class", "link-text link-text--external svelte-ouaoz9");
+    			add_location(span, file$3, 32, 20, 904);
     			attr_dev(a, "href", a_href_value = /*project*/ ctx[3].data.direct_link.url);
-    			attr_dev(a, "class", "link link--external svelte-qgqdyn");
+    			attr_dev(a, "class", "link link--external svelte-ouaoz9");
+    			attr_dev(a, "target", "_blank");
     			add_location(a, file$3, 26, 16, 694);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, a, anchor);
-    			append_hydration_dev(a, t);
+    			append_hydration_dev(a, span);
+    			append_hydration_dev(span, t);
 
     			if (!mounted) {
     				dispose = action_destroyer(link$1.call(null, a));

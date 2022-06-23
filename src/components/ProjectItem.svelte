@@ -27,14 +27,19 @@
                 <a
                     href={project.data.direct_link.url}
                     class="link link--external"
+                    target="_blank"
                     use:link
                 >
-                    Voir le site
+                    <span class="link-text link-text--external">
+                        Voir le site
+                    </span>
                 </a>
             {/if}
 
             <a href={project.url} class="link link--internal" use:link>
-                En savoir plus
+                <span class="link-text link-text--internal">
+                    En savoir plus
+                </span>
             </a>
         </div>
     {/await}
