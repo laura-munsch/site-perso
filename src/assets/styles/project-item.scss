@@ -11,6 +11,32 @@
     &:first-of-type {
         margin-left: 40px;
     }
+
+    &--two-links {
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            display: block;
+            mix-blend-mode: screen;
+            transition: transform 0.4s, height 0.4s;
+            z-index: 1;
+            background-color: $orange;
+            transform: translateY(-110%) rotate(-4deg);
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        mix-blend-mode: screen;
+        transition: transform 0.4s, height 0.4s;
+        z-index: 1;
+        background-color: $pink;
+        transform: translateY(110%) rotate(-7deg);
+    }
 }
 
 .image {
@@ -24,29 +50,6 @@
 }
 
 .link {
-    content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    mix-blend-mode: screen;
-    transition: transform 0.4s, height 0.4s;
-
-    &--external {
-        background-color: $orange;
-        transform: translateY(-110%) rotate(-4deg);
-    }
-
-    &--internal {
-        background-color: $pink;
-        transform: translateY(110%) rotate(-7deg);
-    }
-
-    &:hover {
-        height: 200%;
-    }
-}
-
-.link-text {
     display: inline-flex;
     align-items: center;
     position: absolute;
@@ -67,7 +70,7 @@
 
     &--external {
         gap: 15px;
-        top: 32%;
+        top: 23%;
         left: 20%;
         width: 180px;
         transform: rotate(-6deg) translateY(-50%);
@@ -81,7 +84,7 @@
 
     &--internal {
         gap: 10px;
-        bottom: 35%;
+        bottom: 18%;
         right: 15%;
         width: 195px;
         transform: rotate(7deg) translateY(50%);
@@ -98,21 +101,20 @@
 .container:hover {
     width: 500px;
 
-    .link {
+    &::before,
+    &::after {
         transform: translateY(0) rotate(0);
-
-        &--external {
-            transition: transform 0.3s 0.15s cubic-bezier(0, 0, 0.25, 1),
-                height 0.3s;
-        }
-
-        &--internal {
-            transition: transform 0.3s 0.45s cubic-bezier(0, 0, 0.25, 1),
-                height 0.3s;
-        }
     }
 
-    .link-text {
+    &::before {
+        transition: transform 0.3s 0.15s cubic-bezier(0, 0, 0.25, 1);
+    }
+
+    &::after {
+        transition: transform 0.3s 0.45s cubic-bezier(0, 0, 0.25, 1);
+    }
+
+    .link {
         opacity: 1;
 
         &--external {
