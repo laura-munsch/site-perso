@@ -4006,11 +4006,11 @@ var app = (function () {
     	let img_src_value;
     	let img_alt_value;
     	let t0;
-    	let t1;
     	let a;
-    	let t2;
+    	let span;
+    	let t1;
     	let a_href_value;
-    	let div_class_value;
+    	let t2;
     	let mounted;
     	let dispose;
     	let if_block = /*project*/ ctx[3].data.direct_link.url && create_if_block_1$1(ctx);
@@ -4020,10 +4020,11 @@ var app = (function () {
     			div = element("div");
     			img = element("img");
     			t0 = space();
-    			if (if_block) if_block.c();
-    			t1 = space();
     			a = element("a");
-    			t2 = text("En savoir plus");
+    			span = element("span");
+    			t1 = text("en savoir plus");
+    			t2 = space();
+    			if (if_block) if_block.c();
     			this.h();
     		},
     		l: function claim(nodes) {
@@ -4031,38 +4032,40 @@ var app = (function () {
     			var div_nodes = children(div);
     			img = claim_element(div_nodes, "IMG", { src: true, alt: true, class: true });
     			t0 = claim_space(div_nodes);
-    			if (if_block) if_block.l(div_nodes);
-    			t1 = claim_space(div_nodes);
     			a = claim_element(div_nodes, "A", { href: true, class: true });
     			var a_nodes = children(a);
-    			t2 = claim_text(a_nodes, "En savoir plus");
+    			span = claim_element(a_nodes, "SPAN", { class: true });
+    			var span_nodes = children(span);
+    			t1 = claim_text(span_nodes, "en savoir plus");
+    			span_nodes.forEach(detach_dev);
     			a_nodes.forEach(detach_dev);
+    			t2 = claim_space(div_nodes);
+    			if (if_block) if_block.l(div_nodes);
     			div_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
     			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[3].data.image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = /*project*/ ctx[3].data.image.alt);
-    			attr_dev(img, "class", "image svelte-w640nq");
-    			add_location(img, file$3, 23, 12, 604);
+    			attr_dev(img, "class", "image svelte-1eg0ko2");
+    			add_location(img, file$3, 19, 12, 490);
+    			attr_dev(span, "class", "link-text link-text--internal svelte-1eg0ko2");
+    			add_location(span, file$3, 26, 16, 719);
     			attr_dev(a, "href", a_href_value = /*project*/ ctx[3].url);
-    			attr_dev(a, "class", "link link--internal svelte-w640nq");
-    			add_location(a, file$3, 40, 12, 1083);
-
-    			attr_dev(div, "class", div_class_value = "container " + (/*project*/ ctx[3].data.direct_link.url
-    			? 'container--two-links'
-    			: '') + " svelte-w640nq");
-
+    			attr_dev(a, "class", "link link--internal svelte-1eg0ko2");
+    			add_location(a, file$3, 25, 12, 643);
+    			attr_dev(div, "class", "container svelte-1eg0ko2");
     			add_location(div, file$3, 18, 8, 454);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div, anchor);
     			append_hydration_dev(div, img);
     			append_hydration_dev(div, t0);
-    			if (if_block) if_block.m(div, null);
-    			append_hydration_dev(div, t1);
     			append_hydration_dev(div, a);
-    			append_hydration_dev(a, t2);
+    			append_hydration_dev(a, span);
+    			append_hydration_dev(span, t1);
+    			append_hydration_dev(div, t2);
+    			if (if_block) if_block.m(div, null);
 
     			if (!mounted) {
     				dispose = action_destroyer(link$1.call(null, a));
@@ -4078,27 +4081,21 @@ var app = (function () {
     				attr_dev(img, "alt", img_alt_value);
     			}
 
+    			if (dirty & /*item*/ 1 && a_href_value !== (a_href_value = /*project*/ ctx[3].url)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+
     			if (/*project*/ ctx[3].data.direct_link.url) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
     					if_block = create_if_block_1$1(ctx);
     					if_block.c();
-    					if_block.m(div, t1);
+    					if_block.m(div, null);
     				}
     			} else if (if_block) {
     				if_block.d(1);
     				if_block = null;
-    			}
-
-    			if (dirty & /*item*/ 1 && a_href_value !== (a_href_value = /*project*/ ctx[3].url)) {
-    				attr_dev(a, "href", a_href_value);
-    			}
-
-    			if (dirty & /*item*/ 1 && div_class_value !== (div_class_value = "container " + (/*project*/ ctx[3].data.direct_link.url
-    			? 'container--two-links'
-    			: '') + " svelte-w640nq")) {
-    				attr_dev(div, "class", div_class_value);
     			}
     		},
     		i: noop,
@@ -4122,9 +4119,10 @@ var app = (function () {
     	return block;
     }
 
-    // (30:12) {#if project.data.direct_link.url}
+    // (32:12) {#if project.data.direct_link.url}
     function create_if_block_1$1(ctx) {
     	let a;
+    	let span;
     	let t;
     	let a_href_value;
     	let mounted;
@@ -4133,25 +4131,32 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			a = element("a");
-    			t = text("Voir le site");
+    			span = element("span");
+    			t = text("accéder au site");
     			this.h();
     		},
     		l: function claim(nodes) {
     			a = claim_element(nodes, "A", { href: true, class: true, target: true });
     			var a_nodes = children(a);
-    			t = claim_text(a_nodes, "Voir le site");
+    			span = claim_element(a_nodes, "SPAN", { class: true });
+    			var span_nodes = children(span);
+    			t = claim_text(span_nodes, "accéder au site");
+    			span_nodes.forEach(detach_dev);
     			a_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
+    			attr_dev(span, "class", "link-text link-text--external svelte-1eg0ko2");
+    			add_location(span, file$3, 38, 20, 1114);
     			attr_dev(a, "href", a_href_value = /*project*/ ctx[3].data.direct_link.url);
-    			attr_dev(a, "class", "link link--external svelte-w640nq");
+    			attr_dev(a, "class", "link link--external svelte-1eg0ko2");
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$3, 30, 16, 808);
+    			add_location(a, file$3, 32, 16, 904);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, a, anchor);
-    			append_hydration_dev(a, t);
+    			append_hydration_dev(a, span);
+    			append_hydration_dev(span, t);
 
     			if (!mounted) {
     				dispose = action_destroyer(link$1.call(null, a));
@@ -4174,7 +4179,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(30:12) {#if project.data.direct_link.url}",
+    		source: "(32:12) {#if project.data.direct_link.url}",
     		ctx
     	});
 

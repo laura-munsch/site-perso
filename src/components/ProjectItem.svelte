@@ -16,16 +16,18 @@
     {#await loadProject(item.project.slug)}
         <Loader />
     {:then project}
-        <div
-            class="container {project.data.direct_link.url
-                ? 'container--two-links'
-                : ''}"
-        >
+        <div class="container">
             <img
                 src={project.data.image.url}
                 alt={project.data.image.alt}
                 class="image"
             />
+
+            <a href={project.url} class="link link--internal" use:link>
+                <span class="link-text link-text--internal">
+                    en savoir plus
+                </span>
+            </a>
 
             {#if project.data.direct_link.url}
                 <a
@@ -34,13 +36,11 @@
                     target="_blank"
                     use:link
                 >
-                    Voir le site
+                    <span class="link-text link-text--external">
+                        accéder au site
+                    </span>
                 </a>
             {/if}
-
-            <a href={project.url} class="link link--internal" use:link>
-                En savoir plus
-            </a>
         </div>
     {/await}
 {/if}
