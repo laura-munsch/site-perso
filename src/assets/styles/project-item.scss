@@ -41,28 +41,52 @@
     height: 140px;
     align-items: center;
     position: absolute;
-    background-color: $white;
+    color: $pink;
+    background-color: currentColor;
     border-radius: 100%;
+    outline: 0px solid currentColor;
+    outline-offset: -1px;
     z-index: 3;
     opacity: 0;
     top: 50%;
     left: 50%;
-    transition: opacity 0.3s, transform 0s 0.1s;
+    transition: opacity 0.3s, transform 0s 0.31s, outline-width 0.1s;
+
+    &:hover {
+        outline-width: 8px;
+    }
 
     &::before {
-        content: "";
         display: block;
-        flex-shrink: 0;
+        position: absolute;
+        filter: invert(1);
     }
 
     &--internal {
-        background-color: $pink;
-        transform: translate(calc(-100% - 12px), -40%);
+        transform: translate(calc(-100% - 12px), -30%);
+
+        &::before {
+            content: $img-plus;
+            top: 64px;
+            left: 60px;
+            transform: rotate(6deg);
+        }
+    }
+
+    &--only {
+        transform: translate(-50%, -30%);
     }
 
     &--external {
-        background-color: $orange;
-        transform: translate(12px, -40%);
+        color: $orange;
+        transform: translate(12px, -30%);
+
+        &::before {
+            content: $img-arrow;
+            top: 25px;
+            left: 54px;
+            transform: rotate(-5deg);
+        }
     }
 }
 
@@ -73,6 +97,19 @@
     line-height: 80%;
     color: $white;
     max-width: 100px;
+    position: absolute;
+
+    &--internal {
+        top: 27px;
+        left: 20px;
+        transform: rotate(-6deg);
+    }
+
+    &--external {
+        top: 75px;
+        left: 28px;
+        transform: rotate(-5deg);
+    }
 }
 
 // animation
@@ -88,12 +125,20 @@
 
         &--internal {
             transform: translate(calc(-100% - 12px), -50%);
-            transition: opacity 0.3s 0.5s, transform 0.3s 0.5s;
+            transition: opacity 0.3s 0.5s,
+                transform 0.3s 0.5s cubic-bezier(0.42, 0.19, 0.16, 1.48),
+                outline-width 0.2s;
+        }
+
+        &--only {
+            transform: translate(-50%, -50%);
         }
 
         &--external {
             transform: translate(12px, -50%);
-            transition: opacity 0.3s 0.8s, transform 0.3s 0.8s;
+            transition: opacity 0.3s 0.8s,
+                transform 0.3s 0.8s cubic-bezier(0.42, 0.19, 0.16, 1.48),
+                outline-width 0.2s;
         }
     }
 }

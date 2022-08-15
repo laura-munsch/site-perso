@@ -16,6 +16,7 @@
     {#await loadProject(item.project.slug)}
         <Loader />
     {:then project}
+        {@const directLink = project.data.direct_link.url}
         <div class="container">
             <img
                 src={project.data.image.url}
@@ -23,15 +24,19 @@
                 class="image"
             />
 
-            <a href={project.url} class="link link--internal" use:link>
+            <a
+                href={project.url}
+                class="link link--internal {directLink ? '' : 'link--only'}"
+                use:link
+            >
                 <span class="link-text link-text--internal">
                     en savoir plus
                 </span>
             </a>
 
-            {#if project.data.direct_link.url}
+            {#if directLink}
                 <a
-                    href={project.data.direct_link.url}
+                    href={directLink}
                     class="link link--external"
                     target="_blank"
                     use:link
