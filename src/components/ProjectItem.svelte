@@ -2,12 +2,14 @@
     import * as prismicH from "@prismicio/helpers";
     import { link } from "svelte-routing";
     import Loader from "./Loader.svelte";
+    import { asscroll } from "../stores";
 
     export let item;
     export let client;
 
     async function loadProject(slug) {
         const response = await client.getByUID("projects", slug);
+        $asscroll.resize();
         return response;
     }
 </script>

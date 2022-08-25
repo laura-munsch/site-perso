@@ -46,7 +46,7 @@
 
         <main>
             {#each home.data.body as timelinePiece}
-                <div class="project">
+                <div class="step">
                     <p class="year">
                         {prismicH.asText(timelinePiece.primary.year)}
                     </p>
@@ -54,9 +54,11 @@
                         {@html prismicH.asHTML(timelinePiece.primary.title)}
                     </div>
 
-                    {#each timelinePiece.items as item}
-                        <ProjectItem {item} {client} />
-                    {/each}
+                    <div class="projects">
+                        {#each timelinePiece.items as item}
+                            <ProjectItem {item} {client} />
+                        {/each}
+                    </div>
                 </div>
             {/each}
         </main>

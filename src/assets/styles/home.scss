@@ -2,10 +2,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 5000px;
     height: 100vh;
-    display: grid;
-    grid-template-columns: 100vw auto;
+    display: flex;
+    overflow-x: scroll;
 }
 
 header {
@@ -47,12 +46,8 @@ h2 {
 main {
     display: flex;
     align-items: flex-end;
-    gap: 85px;
+    gap: 150px;
     padding: 0 190px 20vh;
-}
-
-.project {
-    width: 500px;
 }
 
 .description {
@@ -76,4 +71,9 @@ main {
         0 -1px 0 $purple;
     margin: 0 0 -60px 200px;
     transform: translateX(calc(var(--scroll-pos) * -0.05));
+}
+
+.projects {
+    display: flex;
+    gap: 25px;
 }

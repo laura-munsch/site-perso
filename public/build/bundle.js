@@ -3901,11 +3901,11 @@ var app = (function () {
     const file$3 = "src/components/ProjectItem.svelte";
 
     function get_then_context(ctx) {
-    	const constants_0 = /*project*/ ctx[3].data.direct_link.url;
-    	ctx[4] = constants_0;
+    	const constants_0 = /*project*/ ctx[4].data.direct_link.url;
+    	ctx[5] = constants_0;
     }
 
-    // (15:0) {#if item.project.slug}
+    // (17:0) {#if item.project.slug}
     function create_if_block$1(ctx) {
     	let await_block_anchor;
     	let promise;
@@ -3919,7 +3919,7 @@ var app = (function () {
     		pending: create_pending_block$2,
     		then: create_then_block$2,
     		catch: create_catch_block$2,
-    		value: 3,
+    		value: 4,
     		blocks: [,,,]
     	};
 
@@ -3974,7 +3974,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(15:0) {#if item.project.slug}",
+    		source: "(17:0) {#if item.project.slug}",
     		ctx
     	});
 
@@ -4004,7 +4004,7 @@ var app = (function () {
     	return block;
     }
 
-    // (18:4) {:then project}
+    // (20:4) {:then project}
     function create_then_block$2(ctx) {
     	get_then_context(ctx);
     	let div;
@@ -4020,7 +4020,7 @@ var app = (function () {
     	let t2;
     	let mounted;
     	let dispose;
-    	let if_block = /*directLink*/ ctx[4] && create_if_block_1$1(ctx);
+    	let if_block = /*directLink*/ ctx[5] && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -4052,17 +4052,17 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[3].data.image.url)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", img_alt_value = /*project*/ ctx[3].data.image.alt);
+    			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[4].data.image.url)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", img_alt_value = /*project*/ ctx[4].data.image.alt);
     			attr_dev(img, "class", "image svelte-1bb200z");
-    			add_location(img, file$3, 20, 12, 549);
+    			add_location(img, file$3, 22, 12, 619);
     			attr_dev(span, "class", "link-text link-text--internal svelte-1bb200z");
-    			add_location(span, file$3, 31, 16, 872);
-    			attr_dev(a, "href", a_href_value = /*project*/ ctx[3].url);
-    			attr_dev(a, "class", a_class_value = "link link--internal " + (/*directLink*/ ctx[4] ? '' : 'link--only') + " svelte-1bb200z");
-    			add_location(a, file$3, 26, 12, 702);
+    			add_location(span, file$3, 33, 16, 942);
+    			attr_dev(a, "href", a_href_value = /*project*/ ctx[4].url);
+    			attr_dev(a, "class", a_class_value = "link link--internal " + (/*directLink*/ ctx[5] ? '' : 'link--only') + " svelte-1bb200z");
+    			add_location(a, file$3, 28, 12, 772);
     			attr_dev(div, "class", "container svelte-1bb200z");
-    			add_location(div, file$3, 19, 8, 513);
+    			add_location(div, file$3, 21, 8, 583);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div, anchor);
@@ -4082,23 +4082,23 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			get_then_context(ctx);
 
-    			if (dirty & /*item*/ 1 && !src_url_equal(img.src, img_src_value = /*project*/ ctx[3].data.image.url)) {
+    			if (dirty & /*item*/ 1 && !src_url_equal(img.src, img_src_value = /*project*/ ctx[4].data.image.url)) {
     				attr_dev(img, "src", img_src_value);
     			}
 
-    			if (dirty & /*item*/ 1 && img_alt_value !== (img_alt_value = /*project*/ ctx[3].data.image.alt)) {
+    			if (dirty & /*item*/ 1 && img_alt_value !== (img_alt_value = /*project*/ ctx[4].data.image.alt)) {
     				attr_dev(img, "alt", img_alt_value);
     			}
 
-    			if (dirty & /*item*/ 1 && a_href_value !== (a_href_value = /*project*/ ctx[3].url)) {
+    			if (dirty & /*item*/ 1 && a_href_value !== (a_href_value = /*project*/ ctx[4].url)) {
     				attr_dev(a, "href", a_href_value);
     			}
 
-    			if (dirty & /*item*/ 1 && a_class_value !== (a_class_value = "link link--internal " + (/*directLink*/ ctx[4] ? '' : 'link--only') + " svelte-1bb200z")) {
+    			if (dirty & /*item*/ 1 && a_class_value !== (a_class_value = "link link--internal " + (/*directLink*/ ctx[5] ? '' : 'link--only') + " svelte-1bb200z")) {
     				attr_dev(a, "class", a_class_value);
     			}
 
-    			if (/*directLink*/ ctx[4]) {
+    			if (/*directLink*/ ctx[5]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -4125,14 +4125,14 @@ var app = (function () {
     		block,
     		id: create_then_block$2.name,
     		type: "then",
-    		source: "(18:4) {:then project}",
+    		source: "(20:4) {:then project}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:12) {#if directLink}
+    // (39:12) {#if directLink}
     function create_if_block_1$1(ctx) {
     	let a;
     	let span;
@@ -4160,11 +4160,11 @@ var app = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(span, "class", "link-text link-text--external svelte-1bb200z");
-    			add_location(span, file$3, 43, 20, 1231);
-    			attr_dev(a, "href", a_href_value = /*directLink*/ ctx[4]);
+    			add_location(span, file$3, 45, 20, 1301);
+    			attr_dev(a, "href", a_href_value = /*directLink*/ ctx[5]);
     			attr_dev(a, "class", "link link--external svelte-1bb200z");
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$3, 37, 16, 1039);
+    			add_location(a, file$3, 39, 16, 1109);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, a, anchor);
@@ -4177,7 +4177,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*item*/ 1 && a_href_value !== (a_href_value = /*directLink*/ ctx[4])) {
+    			if (dirty & /*item*/ 1 && a_href_value !== (a_href_value = /*directLink*/ ctx[5])) {
     				attr_dev(a, "href", a_href_value);
     			}
     		},
@@ -4192,14 +4192,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(37:12) {#if directLink}",
+    		source: "(39:12) {#if directLink}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (16:43)          <Loader />     {:then project}
+    // (18:43)          <Loader />     {:then project}
     function create_pending_block$2(ctx) {
     	let loader;
     	let current;
@@ -4235,7 +4235,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$2.name,
     		type: "pending",
-    		source: "(16:43)          <Loader />     {:then project}",
+    		source: "(18:43)          <Loader />     {:then project}",
     		ctx
     	});
 
@@ -4312,6 +4312,9 @@ var app = (function () {
     }
 
     function instance$3($$self, $$props, $$invalidate) {
+    	let $asscroll;
+    	validate_store(asscroll$1, 'asscroll');
+    	component_subscribe($$self, asscroll$1, $$value => $$invalidate(3, $asscroll = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('ProjectItem', slots, []);
     	let { item } = $$props;
@@ -4319,6 +4322,7 @@ var app = (function () {
 
     	async function loadProject(slug) {
     		const response = await client.getByUID("projects", slug);
+    		$asscroll.resize();
     		return response;
     	}
 
@@ -4337,9 +4341,11 @@ var app = (function () {
     		prismicH,
     		link: link$1,
     		Loader,
+    		asscroll: asscroll$1,
     		item,
     		client,
-    		loadProject
+    		loadProject,
+    		$asscroll
     	});
 
     	$$self.$inject_state = $$props => {
@@ -4410,7 +4416,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (63:4) {:catch error}
+    // (65:4) {:catch error}
     function create_catch_block$1(ctx) {
     	let pre;
     	let t_value = /*error*/ ctx[11].message + "";
@@ -4430,7 +4436,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(pre, file$2, 63, 8, 1877);
+    			add_location(pre, file$2, 65, 8, 1956);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, pre, anchor);
@@ -4448,7 +4454,7 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(63:4) {:catch error}",
+    		source: "(65:4) {:catch error}",
     		ctx
     	});
 
@@ -4539,17 +4545,17 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(span0, "class", "title svelte-vwoycd");
+    			attr_dev(span0, "class", "title svelte-5pluo2");
     			add_location(span0, file$2, 37, 16, 981);
-    			attr_dev(span1, "class", "title-bis svelte-vwoycd");
+    			attr_dev(span1, "class", "title-bis svelte-5pluo2");
     			add_location(span1, file$2, 38, 16, 1059);
-    			attr_dev(h1, "class", "svelte-vwoycd");
+    			attr_dev(h1, "class", "svelte-5pluo2");
     			add_location(h1, file$2, 36, 12, 960);
-    			attr_dev(h2, "class", "svelte-vwoycd");
+    			attr_dev(h2, "class", "svelte-5pluo2");
     			add_location(h2, file$2, 43, 12, 1197);
-    			attr_dev(header, "class", "svelte-vwoycd");
+    			attr_dev(header, "class", "svelte-5pluo2");
     			add_location(header, file$2, 35, 8, 939);
-    			attr_dev(main, "class", "svelte-vwoycd");
+    			attr_dev(main, "class", "svelte-5pluo2");
     			add_location(main, file$2, 46, 8, 1271);
     		},
     		m: function mount(target, anchor) {
@@ -4638,7 +4644,7 @@ var app = (function () {
     	return block;
     }
 
-    // (57:20) {#each timelinePiece.items as item}
+    // (58:24) {#each timelinePiece.items as item}
     function create_each_block_1$1(ctx) {
     	let projectitem;
     	let current;
@@ -4681,7 +4687,7 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(57:20) {#each timelinePiece.items as item}",
+    		source: "(58:24) {#each timelinePiece.items as item}",
     		ctx
     	});
 
@@ -4690,7 +4696,7 @@ var app = (function () {
 
     // (48:12) {#each home.data.body as timelinePiece}
     function create_each_block$1(ctx) {
-    	let div1;
+    	let div2;
     	let p;
     	let t0_value = asText(/*timelinePiece*/ ctx[5].primary.year) + "";
     	let t0;
@@ -4698,6 +4704,7 @@ var app = (function () {
     	let div0;
     	let raw_value = asHTML(/*timelinePiece*/ ctx[5].primary.title) + "";
     	let t2;
+    	let div1;
     	let t3;
     	let current;
     	let each_value_1 = /*timelinePiece*/ ctx[5].items;
@@ -4714,12 +4721,13 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div2 = element("div");
     			p = element("p");
     			t0 = text(t0_value);
     			t1 = space();
     			div0 = element("div");
     			t2 = space();
+    			div1 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
@@ -4729,48 +4737,54 @@ var app = (function () {
     			this.h();
     		},
     		l: function claim(nodes) {
-    			div1 = claim_element(nodes, "DIV", { class: true });
-    			var div1_nodes = children(div1);
-    			p = claim_element(div1_nodes, "P", { class: true });
+    			div2 = claim_element(nodes, "DIV", { class: true });
+    			var div2_nodes = children(div2);
+    			p = claim_element(div2_nodes, "P", { class: true });
     			var p_nodes = children(p);
     			t0 = claim_text(p_nodes, t0_value);
     			p_nodes.forEach(detach_dev);
-    			t1 = claim_space(div1_nodes);
-    			div0 = claim_element(div1_nodes, "DIV", { class: true });
+    			t1 = claim_space(div2_nodes);
+    			div0 = claim_element(div2_nodes, "DIV", { class: true });
     			var div0_nodes = children(div0);
     			div0_nodes.forEach(detach_dev);
-    			t2 = claim_space(div1_nodes);
+    			t2 = claim_space(div2_nodes);
+    			div1 = claim_element(div2_nodes, "DIV", { class: true });
+    			var div1_nodes = children(div1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].l(div1_nodes);
     			}
 
-    			t3 = claim_space(div1_nodes);
     			div1_nodes.forEach(detach_dev);
+    			t3 = claim_space(div2_nodes);
+    			div2_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(p, "class", "year svelte-vwoycd");
-    			add_location(p, file$2, 49, 20, 1388);
-    			attr_dev(div0, "class", "description svelte-vwoycd");
-    			add_location(div0, file$2, 52, 20, 1520);
-    			attr_dev(div1, "class", "project svelte-vwoycd");
-    			add_location(div1, file$2, 48, 16, 1346);
+    			attr_dev(p, "class", "year svelte-5pluo2");
+    			add_location(p, file$2, 49, 20, 1385);
+    			attr_dev(div0, "class", "description svelte-5pluo2");
+    			add_location(div0, file$2, 52, 20, 1517);
+    			attr_dev(div1, "class", "projects svelte-5pluo2");
+    			add_location(div1, file$2, 56, 20, 1668);
+    			attr_dev(div2, "class", "step");
+    			add_location(div2, file$2, 48, 16, 1346);
     		},
     		m: function mount(target, anchor) {
-    			insert_hydration_dev(target, div1, anchor);
-    			append_hydration_dev(div1, p);
+    			insert_hydration_dev(target, div2, anchor);
+    			append_hydration_dev(div2, p);
     			append_hydration_dev(p, t0);
-    			append_hydration_dev(div1, t1);
-    			append_hydration_dev(div1, div0);
+    			append_hydration_dev(div2, t1);
+    			append_hydration_dev(div2, div0);
     			div0.innerHTML = raw_value;
-    			append_hydration_dev(div1, t2);
+    			append_hydration_dev(div2, t2);
+    			append_hydration_dev(div2, div1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div1, null);
     			}
 
-    			append_hydration_dev(div1, t3);
+    			append_hydration_dev(div2, t3);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -4789,7 +4803,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block_1$1(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div1, t3);
+    						each_blocks[i].m(div1, null);
     					}
     				}
 
@@ -4821,7 +4835,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div2);
     			destroy_each(each_blocks, detaching);
     		}
     	};
@@ -4913,7 +4927,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(div, "class", "scroll-ctn svelte-vwoycd");
+    			attr_dev(div, "class", "scroll-ctn svelte-5pluo2");
     			attr_dev(div, "style", /*cssVar*/ ctx[0]);
     			add_location(div, file$2, 31, 0, 829);
     		},
