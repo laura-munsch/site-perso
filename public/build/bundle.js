@@ -4545,17 +4545,17 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(span0, "class", "title svelte-5pluo2");
+    			attr_dev(span0, "class", "title svelte-wfqd6a");
     			add_location(span0, file$2, 37, 16, 981);
-    			attr_dev(span1, "class", "title-bis svelte-5pluo2");
+    			attr_dev(span1, "class", "title-bis svelte-wfqd6a");
     			add_location(span1, file$2, 38, 16, 1059);
-    			attr_dev(h1, "class", "svelte-5pluo2");
+    			attr_dev(h1, "class", "svelte-wfqd6a");
     			add_location(h1, file$2, 36, 12, 960);
-    			attr_dev(h2, "class", "svelte-5pluo2");
+    			attr_dev(h2, "class", "svelte-wfqd6a");
     			add_location(h2, file$2, 43, 12, 1197);
-    			attr_dev(header, "class", "svelte-5pluo2");
+    			attr_dev(header, "class", "svelte-wfqd6a");
     			add_location(header, file$2, 35, 8, 939);
-    			attr_dev(main, "class", "svelte-5pluo2");
+    			attr_dev(main, "class", "svelte-wfqd6a");
     			add_location(main, file$2, 46, 8, 1271);
     		},
     		m: function mount(target, anchor) {
@@ -4761,11 +4761,11 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(p, "class", "year svelte-5pluo2");
+    			attr_dev(p, "class", "year svelte-wfqd6a");
     			add_location(p, file$2, 49, 20, 1385);
-    			attr_dev(div0, "class", "description svelte-5pluo2");
+    			attr_dev(div0, "class", "description svelte-wfqd6a");
     			add_location(div0, file$2, 52, 20, 1517);
-    			attr_dev(div1, "class", "projects svelte-5pluo2");
+    			attr_dev(div1, "class", "projects svelte-wfqd6a");
     			add_location(div1, file$2, 56, 20, 1668);
     			attr_dev(div2, "class", "step");
     			add_location(div2, file$2, 48, 16, 1346);
@@ -4927,7 +4927,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(div, "class", "scroll-ctn svelte-5pluo2");
+    			attr_dev(div, "class", "scroll-ctn svelte-wfqd6a");
     			attr_dev(div, "style", /*cssVar*/ ctx[0]);
     			add_location(div, file$2, 31, 0, 829);
     		},

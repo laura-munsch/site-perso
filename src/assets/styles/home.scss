@@ -40,7 +40,14 @@ h2 {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -75%) rotate(-10deg);
+    font-family: "League Script", script;
+    text-transform: lowercase;
+    font-size: #{(55/16)}rem;
+    max-width: 550px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 120%;
 }
 
 main {
