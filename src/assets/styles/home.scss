@@ -17,6 +17,14 @@ header {
     position: relative;
 }
 
+.logo {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 45px;
+    left: 50px;
+}
+
 h1 {
     color: $pink;
     font-size: #{(160/16)}rem;
@@ -55,6 +63,7 @@ main {
     align-items: flex-end;
     gap: 150px;
     padding: 0 190px 20vh;
+    background-color: $white;
 }
 
 .description {
@@ -83,4 +92,31 @@ main {
 .projects {
     display: flex;
     gap: 25px;
+}
+
+footer {
+    background-color: $purple;
+    padding: 50px 40px;
+    width: 215px;
+    box-sizing: border-box;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    :global p {
+        text-align: center;
+        font-size: #{(14/16)}rem;
+    }
+
+    :global a {
+        text-decoration: underline;
+    }
 }

@@ -34,6 +34,12 @@
         <Loader />
     {:then home}
         <header>
+            <img
+                src="images/monogramme-blanc.png"
+                alt="Monogramme en forme de visage avec un L et un M"
+                class="logo"
+            />
+
             <h1>
                 <span class="title">{prismicH.asText(home.data.title)}</span>
                 <span class="title-bis">
@@ -62,6 +68,15 @@
                 </div>
             {/each}
         </main>
+
+        <footer>
+            <img
+                src="images/monogramme-blanc.png"
+                alt="Monogramme en forme de visage avec un L et un M"
+            />
+
+            {@html prismicH.asHTML(home.data.footer)}
+        </footer>
     {:catch error}
         <pre>{error.message}</pre>
     {/await}
