@@ -9,7 +9,9 @@
 
     async function loadProject(slug) {
         const response = await client.getByUID("projects", slug);
-        $asscroll.resize();
+        then: {
+            $asscroll.resize();
+        }
         return response;
     }
 </script>
