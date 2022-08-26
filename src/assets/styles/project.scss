@@ -17,6 +17,23 @@
     position: absolute;
     top: 50px;
     right: 50px;
+    background-color: $white;
+    padding: 6px 6px 4px;
+    transform: rotate(7deg);
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: rotate(97deg) scale(1.2);
+
+        img {
+            transform: rotate(45deg) scale(0.8);
+        }
+    }
+
+    img {
+        transition: transform 0.3s;
+        transform: rotate(45deg);
+    }
 }
 
 .description {
@@ -54,6 +71,25 @@ h1 {
     top: 0;
     margin: 0;
     transform: translate(-10px, -50%) rotate(-2deg);
+
+    .link {
+        display: inline-grid;
+        place-content: center;
+        background: none;
+        padding: 0;
+        height: 50px;
+        width: 50px;
+        border: 1px solid $purple;
+        border-radius: 50px;
+
+        img {
+            transition: transform 0.3s;
+        }
+
+        &:hover img {
+            transform: translate(20px, -20px);
+        }
+    }
 }
 
 .tags {

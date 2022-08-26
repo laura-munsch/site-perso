@@ -2,7 +2,7 @@
     import createClient from "../lib/prismicClient";
     import * as prismicH from "@prismicio/helpers";
     import Loader from "../components/Loader.svelte";
-    import { Link } from "svelte-routing";
+    import { Link, link } from "svelte-routing";
 
     export let slug;
 
@@ -13,11 +13,23 @@
 {#await prismicQuery}
     <Loader />
 {:then project}
+    {@const directLink = project.data.direct_link.url}
+
     <article class="ctn">
-        <Link to="/" class="close">Accueil</Link>
+        <Link to="/" class="close">
+            <img src="/images/cross.svg" alt="Croix" />
+        </Link>
 
         <div class="description">
-            <h1>{prismicH.asText(project.data.title)}</h1>
+            <h1>
+                {prismicH.asText(project.data.title)}
+
+                {#if directLink}
+                    <a href={directLink} class="link" target="_blank" use:link>
+                        <img src="/images/purple-arrow.svg" alt="" />
+                    </a>
+                {/if}
+            </h1>
 
             {#if project.tags}
                 <ul class="tags">
