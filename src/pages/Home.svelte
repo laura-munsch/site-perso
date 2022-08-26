@@ -11,6 +11,7 @@
     const prismicQuery = client.getSingle("home");
 
     let cssVar;
+    let headerClass = "initial";
 
     onMount(() => {
         $asscroll.enable({
@@ -21,6 +22,12 @@
 
         $asscroll.on("scroll", (scrollPos) => {
             cssVar = `--scroll-pos:${scrollPos}px`;
+
+            if (scrollPos < 1) {
+                headerClass = "initial";
+            } else {
+                headerClass = "scrolled";
+            }
         });
 
         return () => {
@@ -33,7 +40,7 @@
     {#await prismicQuery}
         <Loader />
     {:then home}
-        <header>
+        <header class={headerClass}>
             <img
                 src="images/monogramme-blanc.png"
                 alt="Monogramme en forme de visage avec un L et un M"

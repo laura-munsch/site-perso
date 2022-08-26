@@ -120,6 +120,9 @@ var app = (function () {
                 rest[k] = props[k];
         return rest;
     }
+    function null_to_empty(value) {
+        return value == null ? '' : value;
+    }
     function set_store_value(store, ret, value) {
         store.set(value);
         return ret;
@@ -4387,20 +4390,20 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i];
+    	child_ctx[6] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
-    // (80:4) {:catch error}
+    // (87:4) {:catch error}
     function create_catch_block$1(ctx) {
     	let pre;
-    	let t_value = /*error*/ ctx[11].message + "";
+    	let t_value = /*error*/ ctx[12].message + "";
     	let t;
 
     	const block = {
@@ -4417,7 +4420,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(pre, file$2, 80, 8, 2381);
+    			add_location(pre, file$2, 87, 8, 2586);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, pre, anchor);
@@ -4435,14 +4438,14 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(80:4) {:catch error}",
+    		source: "(87:4) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (35:4) {:then home}
+    // (42:4) {:then home}
     function create_then_block$1(ctx) {
     	let header;
     	let img0;
@@ -4450,16 +4453,17 @@ var app = (function () {
     	let t0;
     	let h1;
     	let span0;
-    	let t1_value = asText(/*home*/ ctx[4].data.title) + "";
+    	let t1_value = asText(/*home*/ ctx[5].data.title) + "";
     	let t1;
     	let t2;
     	let span1;
-    	let t3_value = asText(/*home*/ ctx[4].data.titlebis) + "";
+    	let t3_value = asText(/*home*/ ctx[5].data.titlebis) + "";
     	let t3;
     	let t4;
     	let h2;
-    	let t5_value = asText(/*home*/ ctx[4].data.subtitle) + "";
+    	let t5_value = asText(/*home*/ ctx[5].data.subtitle) + "";
     	let t5;
+    	let header_class_value;
     	let t6;
     	let main;
     	let t7;
@@ -4468,9 +4472,9 @@ var app = (function () {
     	let img1_src_value;
     	let t8;
     	let html_tag;
-    	let raw_value = asHTML(/*home*/ ctx[4].data.footer) + "";
+    	let raw_value = asHTML(/*home*/ ctx[5].data.footer) + "";
     	let current;
-    	let each_value = /*home*/ ctx[4].data.body;
+    	let each_value = /*home*/ ctx[5].data.body;
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -4554,27 +4558,27 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img0.src, img0_src_value = "images/monogramme-blanc.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Monogramme en forme de visage avec un L et un M");
-    			attr_dev(img0, "class", "logo svelte-l6ewy6");
-    			add_location(img0, file$2, 36, 12, 960);
-    			attr_dev(span0, "class", "title svelte-l6ewy6");
-    			add_location(span0, file$2, 43, 16, 1163);
-    			attr_dev(span1, "class", "title-bis svelte-l6ewy6");
-    			add_location(span1, file$2, 44, 16, 1241);
-    			attr_dev(h1, "class", "svelte-l6ewy6");
-    			add_location(h1, file$2, 42, 12, 1142);
-    			attr_dev(h2, "class", "svelte-l6ewy6");
-    			add_location(h2, file$2, 49, 12, 1379);
-    			attr_dev(header, "class", "svelte-l6ewy6");
-    			add_location(header, file$2, 35, 8, 939);
-    			attr_dev(main, "class", "svelte-l6ewy6");
-    			add_location(main, file$2, 52, 8, 1453);
+    			attr_dev(img0, "class", "logo svelte-1pe58qf");
+    			add_location(img0, file$2, 43, 12, 1165);
+    			attr_dev(span0, "class", "title svelte-1pe58qf");
+    			add_location(span0, file$2, 50, 16, 1368);
+    			attr_dev(span1, "class", "title-bis svelte-1pe58qf");
+    			add_location(span1, file$2, 51, 16, 1446);
+    			attr_dev(h1, "class", "svelte-1pe58qf");
+    			add_location(h1, file$2, 49, 12, 1347);
+    			attr_dev(h2, "class", "svelte-1pe58qf");
+    			add_location(h2, file$2, 56, 12, 1584);
+    			attr_dev(header, "class", header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-1pe58qf"));
+    			add_location(header, file$2, 42, 8, 1124);
+    			attr_dev(main, "class", "svelte-1pe58qf");
+    			add_location(main, file$2, 59, 8, 1658);
     			if (!src_url_equal(img1.src, img1_src_value = "images/monogramme-blanc.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Monogramme en forme de visage avec un L et un M");
-    			attr_dev(img1, "class", "svelte-l6ewy6");
-    			add_location(img1, file$2, 72, 12, 2141);
+    			attr_dev(img1, "class", "svelte-1pe58qf");
+    			add_location(img1, file$2, 79, 12, 2346);
     			html_tag.a = null;
-    			attr_dev(footer, "class", "svelte-l6ewy6");
-    			add_location(footer, file$2, 71, 8, 2120);
+    			attr_dev(footer, "class", "svelte-1pe58qf");
+    			add_location(footer, file$2, 78, 8, 2325);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, header, anchor);
@@ -4604,8 +4608,12 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*prismicQuery, client, prismicH*/ 6) {
-    				each_value = /*home*/ ctx[4].data.body;
+    			if (!current || dirty & /*headerClass*/ 2 && header_class_value !== (header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-1pe58qf"))) {
+    				attr_dev(header, "class", header_class_value);
+    			}
+
+    			if (dirty & /*prismicQuery, client, prismicH*/ 12) {
+    				each_value = /*home*/ ctx[5].data.body;
     				validate_each_argument(each_value);
     				let i;
 
@@ -4664,22 +4672,22 @@ var app = (function () {
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(35:4) {:then home}",
+    		source: "(42:4) {:then home}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:24) {#each timelinePiece.items as item}
+    // (71:24) {#each timelinePiece.items as item}
     function create_each_block_1$1(ctx) {
     	let projectitem;
     	let current;
 
     	projectitem = new ProjectItem({
     			props: {
-    				item: /*item*/ ctx[8],
-    				client: /*client*/ ctx[1]
+    				item: /*item*/ ctx[9],
+    				client: /*client*/ ctx[2]
     			},
     			$$inline: true
     		});
@@ -4714,27 +4722,27 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(64:24) {#each timelinePiece.items as item}",
+    		source: "(71:24) {#each timelinePiece.items as item}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:12) {#each home.data.body as timelinePiece}
+    // (61:12) {#each home.data.body as timelinePiece}
     function create_each_block$1(ctx) {
     	let div2;
     	let p;
-    	let t0_value = asText(/*timelinePiece*/ ctx[5].primary.year) + "";
+    	let t0_value = asText(/*timelinePiece*/ ctx[6].primary.year) + "";
     	let t0;
     	let t1;
     	let div0;
-    	let raw_value = asHTML(/*timelinePiece*/ ctx[5].primary.title) + "";
+    	let raw_value = asHTML(/*timelinePiece*/ ctx[6].primary.title) + "";
     	let t2;
     	let div1;
     	let t3;
     	let current;
-    	let each_value_1 = /*timelinePiece*/ ctx[5].items;
+    	let each_value_1 = /*timelinePiece*/ ctx[6].items;
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -4788,14 +4796,14 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(p, "class", "year svelte-l6ewy6");
-    			add_location(p, file$2, 55, 20, 1567);
-    			attr_dev(div0, "class", "description svelte-l6ewy6");
-    			add_location(div0, file$2, 58, 20, 1699);
-    			attr_dev(div1, "class", "projects svelte-l6ewy6");
-    			add_location(div1, file$2, 62, 20, 1850);
+    			attr_dev(p, "class", "year svelte-1pe58qf");
+    			add_location(p, file$2, 62, 20, 1772);
+    			attr_dev(div0, "class", "description svelte-1pe58qf");
+    			add_location(div0, file$2, 65, 20, 1904);
+    			attr_dev(div1, "class", "projects svelte-1pe58qf");
+    			add_location(div1, file$2, 69, 20, 2055);
     			attr_dev(div2, "class", "step");
-    			add_location(div2, file$2, 54, 16, 1528);
+    			add_location(div2, file$2, 61, 16, 1733);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div2, anchor);
@@ -4815,8 +4823,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*prismicQuery, client*/ 6) {
-    				each_value_1 = /*timelinePiece*/ ctx[5].items;
+    			if (dirty & /*prismicQuery, client*/ 12) {
+    				each_value_1 = /*timelinePiece*/ ctx[6].items;
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -4871,14 +4879,14 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(54:12) {#each home.data.body as timelinePiece}",
+    		source: "(61:12) {#each home.data.body as timelinePiece}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (33:25)          <Loader />     {:then home}
+    // (40:25)          <Loader />     {:then home}
     function create_pending_block$1(ctx) {
     	let loader;
     	let current;
@@ -4914,7 +4922,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(33:25)          <Loader />     {:then home}",
+    		source: "(40:25)          <Loader />     {:then home}",
     		ctx
     	});
 
@@ -4933,12 +4941,12 @@ var app = (function () {
     		pending: create_pending_block$1,
     		then: create_then_block$1,
     		catch: create_catch_block$1,
-    		value: 4,
-    		error: 11,
+    		value: 5,
+    		error: 12,
     		blocks: [,,,]
     	};
 
-    	handle_promise(/*prismicQuery*/ ctx[2], info);
+    	handle_promise(/*prismicQuery*/ ctx[3], info);
 
     	const block = {
     		c: function create() {
@@ -4954,9 +4962,9 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(div, "class", "scroll-ctn svelte-l6ewy6");
+    			attr_dev(div, "class", "scroll-ctn svelte-1pe58qf");
     			attr_dev(div, "style", /*cssVar*/ ctx[0]);
-    			add_location(div, file$2, 31, 0, 829);
+    			add_location(div, file$2, 38, 0, 1014);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div, anchor);
@@ -5008,12 +5016,13 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let $asscroll;
     	validate_store(asscroll$1, 'asscroll');
-    	component_subscribe($$self, asscroll$1, $$value => $$invalidate(3, $asscroll = $$value));
+    	component_subscribe($$self, asscroll$1, $$value => $$invalidate(4, $asscroll = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Home', slots, []);
     	const client = createClient();
     	const prismicQuery = client.getSingle("home");
     	let cssVar;
+    	let headerClass = "initial";
 
     	onMount(() => {
     		$asscroll.enable({
@@ -5024,6 +5033,12 @@ var app = (function () {
 
     		$asscroll.on("scroll", scrollPos => {
     			$$invalidate(0, cssVar = `--scroll-pos:${scrollPos}px`);
+
+    			if (scrollPos < 1) {
+    				$$invalidate(1, headerClass = "initial");
+    			} else {
+    				$$invalidate(1, headerClass = "scrolled");
+    			}
     		});
 
     		return () => {
@@ -5047,18 +5062,20 @@ var app = (function () {
     		client,
     		prismicQuery,
     		cssVar,
+    		headerClass,
     		$asscroll
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('cssVar' in $$props) $$invalidate(0, cssVar = $$props.cssVar);
+    		if ('headerClass' in $$props) $$invalidate(1, headerClass = $$props.headerClass);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [cssVar, client, prismicQuery];
+    	return [cssVar, headerClass, client, prismicQuery];
     }
 
     class Home extends SvelteComponentDev {
