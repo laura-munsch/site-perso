@@ -1,3 +1,6 @@
+$scroll-max: min(var(--scroll-px), 400px);
+$scroll-rotate: calc(var(--scroll-deg) / 5);
+
 .scroll-ctn {
     position: absolute;
     top: 0;
@@ -25,7 +28,7 @@ header {
         position: absolute;
         top: 0;
         left: 0;
-        transition: width 0.8s;
+        transition: width 0.8s cubic-bezier(0.42, 0, 0.26, 0.91);
     }
 
     &.initial {
@@ -36,6 +39,47 @@ header {
         h1 {
             color: $beige;
         }
+
+        .star {
+            filter: brightness(200);
+        }
+    }
+
+    .star {
+        position: absolute;
+        z-index: 3;
+        transition: filter 0.2s 0.2s,
+            transform 0.8s cubic-bezier(0, 0.01, 0.28, 1.02);
+    }
+
+    #star-1 {
+        top: 85%;
+        left: 60%;
+        transform: rotate(calc(33deg + $scroll-rotate)) scale(1.1);
+    }
+
+    #star-2 {
+        top: 65%;
+        left: 10%;
+        transform: rotate(calc(-3deg + $scroll-rotate)) scale(0.7);
+    }
+
+    #star-3 {
+        top: 15%;
+        left: 52%;
+        transform: rotate(calc(10deg + $scroll-rotate)) scale(0.9);
+    }
+
+    #star-4 {
+        top: 25%;
+        left: 35%;
+        transform: rotate(calc(5deg + $scroll-rotate)) scale(0.8);
+    }
+
+    #star-5 {
+        top: 35%;
+        left: 80%;
+        transform: rotate(calc(-15deg + $scroll-rotate));
     }
 }
 
@@ -60,12 +104,12 @@ h1 {
 
     .title {
         display: inline-block;
-        transform: translateX(calc(var(--scroll-pos) * -0.3));
+        transform: translateX(calc($scroll-max * -0.3));
     }
 
     .title-bis {
         display: inline-block;
-        transform: translateX(calc(var(--scroll-pos) * 0.2));
+        transform: translateX(calc($scroll-max * 0.2));
     }
 }
 
@@ -112,7 +156,7 @@ main {
     text-shadow: 1px 0 0 $purple, 0 1px 0 $purple, -1px 0 0 $purple,
         0 -1px 0 $purple;
     margin: 0 0 -60px 200px;
-    transform: translateX(calc(var(--scroll-pos) * -0.05));
+    transform: translateX(calc(var(--scroll-px) * -0.05));
 }
 
 .projects {

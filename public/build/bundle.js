@@ -4400,7 +4400,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (87:4) {:catch error}
+    // (118:4) {:catch error}
     function create_catch_block$1(ctx) {
     	let pre;
     	let t_value = /*error*/ ctx[12].message + "";
@@ -4420,7 +4420,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(pre, file$2, 87, 8, 2586);
+    			add_location(pre, file$2, 118, 8, 3430);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, pre, anchor);
@@ -4438,7 +4438,7 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(87:4) {:catch error}",
+    		source: "(118:4) {:catch error}",
     		ctx
     	});
 
@@ -4463,14 +4463,29 @@ var app = (function () {
     	let h2;
     	let t5_value = asText(/*home*/ ctx[5].data.subtitle) + "";
     	let t5;
-    	let header_class_value;
     	let t6;
-    	let main;
-    	let t7;
-    	let footer;
     	let img1;
     	let img1_src_value;
+    	let t7;
+    	let img2;
+    	let img2_src_value;
     	let t8;
+    	let img3;
+    	let img3_src_value;
+    	let t9;
+    	let img4;
+    	let img4_src_value;
+    	let t10;
+    	let img5;
+    	let img5_src_value;
+    	let header_class_value;
+    	let t11;
+    	let main;
+    	let t12;
+    	let footer;
+    	let img6;
+    	let img6_src_value;
+    	let t13;
     	let html_tag;
     	let raw_value = asHTML(/*home*/ ctx[5].data.footer) + "";
     	let current;
@@ -4501,16 +4516,26 @@ var app = (function () {
     			h2 = element("h2");
     			t5 = text(t5_value);
     			t6 = space();
+    			img1 = element("img");
+    			t7 = space();
+    			img2 = element("img");
+    			t8 = space();
+    			img3 = element("img");
+    			t9 = space();
+    			img4 = element("img");
+    			t10 = space();
+    			img5 = element("img");
+    			t11 = space();
     			main = element("main");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t7 = space();
+    			t12 = space();
     			footer = element("footer");
-    			img1 = element("img");
-    			t8 = space();
+    			img6 = element("img");
+    			t13 = space();
     			html_tag = new HtmlTagHydration(false);
     			this.h();
     		},
@@ -4536,8 +4561,53 @@ var app = (function () {
     			var h2_nodes = children(h2);
     			t5 = claim_text(h2_nodes, t5_value);
     			h2_nodes.forEach(detach_dev);
+    			t6 = claim_space(header_nodes);
+
+    			img1 = claim_element(header_nodes, "IMG", {
+    				src: true,
+    				alt: true,
+    				class: true,
+    				id: true
+    			});
+
+    			t7 = claim_space(header_nodes);
+
+    			img2 = claim_element(header_nodes, "IMG", {
+    				src: true,
+    				alt: true,
+    				class: true,
+    				id: true
+    			});
+
+    			t8 = claim_space(header_nodes);
+
+    			img3 = claim_element(header_nodes, "IMG", {
+    				src: true,
+    				alt: true,
+    				class: true,
+    				id: true
+    			});
+
+    			t9 = claim_space(header_nodes);
+
+    			img4 = claim_element(header_nodes, "IMG", {
+    				src: true,
+    				alt: true,
+    				class: true,
+    				id: true
+    			});
+
+    			t10 = claim_space(header_nodes);
+
+    			img5 = claim_element(header_nodes, "IMG", {
+    				src: true,
+    				alt: true,
+    				class: true,
+    				id: true
+    			});
+
     			header_nodes.forEach(detach_dev);
-    			t6 = claim_space(nodes);
+    			t11 = claim_space(nodes);
     			main = claim_element(nodes, "MAIN", { class: true });
     			var main_nodes = children(main);
 
@@ -4546,11 +4616,11 @@ var app = (function () {
     			}
 
     			main_nodes.forEach(detach_dev);
-    			t7 = claim_space(nodes);
+    			t12 = claim_space(nodes);
     			footer = claim_element(nodes, "FOOTER", { class: true });
     			var footer_nodes = children(footer);
-    			img1 = claim_element(footer_nodes, "IMG", { src: true, alt: true, class: true });
-    			t8 = claim_space(footer_nodes);
+    			img6 = claim_element(footer_nodes, "IMG", { src: true, alt: true, class: true });
+    			t13 = claim_space(footer_nodes);
     			html_tag = claim_html_tag(footer_nodes, false);
     			footer_nodes.forEach(detach_dev);
     			this.h();
@@ -4558,27 +4628,52 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img0.src, img0_src_value = "images/monogramme-blanc.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Monogramme en forme de visage avec un L et un M");
-    			attr_dev(img0, "class", "logo svelte-1pe58qf");
-    			add_location(img0, file$2, 43, 12, 1165);
-    			attr_dev(span0, "class", "title svelte-1pe58qf");
-    			add_location(span0, file$2, 50, 16, 1368);
-    			attr_dev(span1, "class", "title-bis svelte-1pe58qf");
-    			add_location(span1, file$2, 51, 16, 1446);
-    			attr_dev(h1, "class", "svelte-1pe58qf");
-    			add_location(h1, file$2, 49, 12, 1347);
-    			attr_dev(h2, "class", "svelte-1pe58qf");
-    			add_location(h2, file$2, 56, 12, 1584);
-    			attr_dev(header, "class", header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-1pe58qf"));
-    			add_location(header, file$2, 42, 8, 1124);
-    			attr_dev(main, "class", "svelte-1pe58qf");
-    			add_location(main, file$2, 59, 8, 1658);
-    			if (!src_url_equal(img1.src, img1_src_value = "images/monogramme-blanc.png")) attr_dev(img1, "src", img1_src_value);
-    			attr_dev(img1, "alt", "Monogramme en forme de visage avec un L et un M");
-    			attr_dev(img1, "class", "svelte-1pe58qf");
-    			add_location(img1, file$2, 79, 12, 2346);
+    			attr_dev(img0, "class", "logo svelte-zkmteb");
+    			add_location(img0, file$2, 43, 12, 1194);
+    			attr_dev(span0, "class", "title svelte-zkmteb");
+    			add_location(span0, file$2, 50, 16, 1397);
+    			attr_dev(span1, "class", "title-bis svelte-zkmteb");
+    			add_location(span1, file$2, 51, 16, 1475);
+    			attr_dev(h1, "class", "svelte-zkmteb");
+    			add_location(h1, file$2, 49, 12, 1376);
+    			attr_dev(h2, "class", "svelte-zkmteb");
+    			add_location(h2, file$2, 56, 12, 1613);
+    			if (!src_url_equal(img1.src, img1_src_value = "/images/big-purple-star.svg")) attr_dev(img1, "src", img1_src_value);
+    			attr_dev(img1, "alt", "");
+    			attr_dev(img1, "class", "star svelte-zkmteb");
+    			attr_dev(img1, "id", "star-1");
+    			add_location(img1, file$2, 58, 12, 1673);
+    			if (!src_url_equal(img2.src, img2_src_value = "/images/big-purple-star.svg")) attr_dev(img2, "src", img2_src_value);
+    			attr_dev(img2, "alt", "");
+    			attr_dev(img2, "class", "star svelte-zkmteb");
+    			attr_dev(img2, "id", "star-2");
+    			add_location(img2, file$2, 64, 12, 1835);
+    			if (!src_url_equal(img3.src, img3_src_value = "/images/big-purple-star.svg")) attr_dev(img3, "src", img3_src_value);
+    			attr_dev(img3, "alt", "");
+    			attr_dev(img3, "class", "star svelte-zkmteb");
+    			attr_dev(img3, "id", "star-3");
+    			add_location(img3, file$2, 70, 12, 1997);
+    			if (!src_url_equal(img4.src, img4_src_value = "/images/small-purple-star.svg")) attr_dev(img4, "src", img4_src_value);
+    			attr_dev(img4, "alt", "");
+    			attr_dev(img4, "class", "star svelte-zkmteb");
+    			attr_dev(img4, "id", "star-4");
+    			add_location(img4, file$2, 76, 12, 2159);
+    			if (!src_url_equal(img5.src, img5_src_value = "/images/small-purple-star.svg")) attr_dev(img5, "src", img5_src_value);
+    			attr_dev(img5, "alt", "");
+    			attr_dev(img5, "class", "star svelte-zkmteb");
+    			attr_dev(img5, "id", "star-5");
+    			add_location(img5, file$2, 82, 12, 2323);
+    			attr_dev(header, "class", header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-zkmteb"));
+    			add_location(header, file$2, 42, 8, 1153);
+    			attr_dev(main, "class", "svelte-zkmteb");
+    			add_location(main, file$2, 90, 8, 2502);
+    			if (!src_url_equal(img6.src, img6_src_value = "images/monogramme-blanc.png")) attr_dev(img6, "src", img6_src_value);
+    			attr_dev(img6, "alt", "Monogramme en forme de visage avec un L et un M");
+    			attr_dev(img6, "class", "svelte-zkmteb");
+    			add_location(img6, file$2, 110, 12, 3190);
     			html_tag.a = null;
-    			attr_dev(footer, "class", "svelte-1pe58qf");
-    			add_location(footer, file$2, 78, 8, 2325);
+    			attr_dev(footer, "class", "svelte-zkmteb");
+    			add_location(footer, file$2, 109, 8, 3169);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, header, anchor);
@@ -4593,22 +4688,32 @@ var app = (function () {
     			append_hydration_dev(header, t4);
     			append_hydration_dev(header, h2);
     			append_hydration_dev(h2, t5);
-    			insert_hydration_dev(target, t6, anchor);
+    			append_hydration_dev(header, t6);
+    			append_hydration_dev(header, img1);
+    			append_hydration_dev(header, t7);
+    			append_hydration_dev(header, img2);
+    			append_hydration_dev(header, t8);
+    			append_hydration_dev(header, img3);
+    			append_hydration_dev(header, t9);
+    			append_hydration_dev(header, img4);
+    			append_hydration_dev(header, t10);
+    			append_hydration_dev(header, img5);
+    			insert_hydration_dev(target, t11, anchor);
     			insert_hydration_dev(target, main, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(main, null);
     			}
 
-    			insert_hydration_dev(target, t7, anchor);
+    			insert_hydration_dev(target, t12, anchor);
     			insert_hydration_dev(target, footer, anchor);
-    			append_hydration_dev(footer, img1);
-    			append_hydration_dev(footer, t8);
+    			append_hydration_dev(footer, img6);
+    			append_hydration_dev(footer, t13);
     			html_tag.m(raw_value, footer);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*headerClass*/ 2 && header_class_value !== (header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-1pe58qf"))) {
+    			if (!current || dirty & /*headerClass*/ 2 && header_class_value !== (header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-zkmteb"))) {
     				attr_dev(header, "class", header_class_value);
     			}
 
@@ -4660,10 +4765,10 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(header);
-    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(t11);
     			if (detaching) detach_dev(main);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(t12);
     			if (detaching) detach_dev(footer);
     		}
     	};
@@ -4679,7 +4784,7 @@ var app = (function () {
     	return block;
     }
 
-    // (71:24) {#each timelinePiece.items as item}
+    // (102:24) {#each timelinePiece.items as item}
     function create_each_block_1$1(ctx) {
     	let projectitem;
     	let current;
@@ -4722,14 +4827,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(71:24) {#each timelinePiece.items as item}",
+    		source: "(102:24) {#each timelinePiece.items as item}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:12) {#each home.data.body as timelinePiece}
+    // (92:12) {#each home.data.body as timelinePiece}
     function create_each_block$1(ctx) {
     	let div2;
     	let p;
@@ -4796,14 +4901,14 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(p, "class", "year svelte-1pe58qf");
-    			add_location(p, file$2, 62, 20, 1772);
-    			attr_dev(div0, "class", "description svelte-1pe58qf");
-    			add_location(div0, file$2, 65, 20, 1904);
-    			attr_dev(div1, "class", "projects svelte-1pe58qf");
-    			add_location(div1, file$2, 69, 20, 2055);
+    			attr_dev(p, "class", "year svelte-zkmteb");
+    			add_location(p, file$2, 93, 20, 2616);
+    			attr_dev(div0, "class", "description svelte-zkmteb");
+    			add_location(div0, file$2, 96, 20, 2748);
+    			attr_dev(div1, "class", "projects svelte-zkmteb");
+    			add_location(div1, file$2, 100, 20, 2899);
     			attr_dev(div2, "class", "step");
-    			add_location(div2, file$2, 61, 16, 1733);
+    			add_location(div2, file$2, 92, 16, 2577);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div2, anchor);
@@ -4879,7 +4984,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(61:12) {#each home.data.body as timelinePiece}",
+    		source: "(92:12) {#each home.data.body as timelinePiece}",
     		ctx
     	});
 
@@ -4962,9 +5067,9 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(div, "class", "scroll-ctn svelte-1pe58qf");
+    			attr_dev(div, "class", "scroll-ctn svelte-zkmteb");
     			attr_dev(div, "style", /*cssVar*/ ctx[0]);
-    			add_location(div, file$2, 38, 0, 1014);
+    			add_location(div, file$2, 38, 0, 1043);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div, anchor);
@@ -5032,7 +5137,7 @@ var app = (function () {
     		});
 
     		$asscroll.on("scroll", scrollPos => {
-    			$$invalidate(0, cssVar = `--scroll-pos:${scrollPos}px`);
+    			$$invalidate(0, cssVar = `--scroll-px:${scrollPos}px; --scroll-deg:${scrollPos}deg`);
 
     			if (scrollPos < 1) {
     				$$invalidate(1, headerClass = "initial");

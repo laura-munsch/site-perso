@@ -21,7 +21,7 @@
         });
 
         $asscroll.on("scroll", (scrollPos) => {
-            cssVar = `--scroll-pos:${scrollPos}px`;
+            cssVar = `--scroll-px:${scrollPos}px; --scroll-deg:${scrollPos}deg`;
 
             if (scrollPos < 1) {
                 headerClass = "initial";
@@ -55,6 +55,37 @@
             </h1>
 
             <h2>{prismicH.asText(home.data.subtitle)}</h2>
+
+            <img
+                src="/images/big-purple-star.svg"
+                alt=""
+                class="star"
+                id="star-1"
+            />
+            <img
+                src="/images/big-purple-star.svg"
+                alt=""
+                class="star"
+                id="star-2"
+            />
+            <img
+                src="/images/big-purple-star.svg"
+                alt=""
+                class="star"
+                id="star-3"
+            />
+            <img
+                src="/images/small-purple-star.svg"
+                alt=""
+                class="star"
+                id="star-4"
+            />
+            <img
+                src="/images/small-purple-star.svg"
+                alt=""
+                class="star"
+                id="star-5"
+            />
         </header>
 
         <main>
