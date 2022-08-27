@@ -14,3 +14,9 @@ $font-heading: "Blogh", sans-serif;
 // images
 $img-arrow: url("../images/arrow.svg");
 $img-plus: url("../images/plus.svg");
+
+// breakpoints
+$bp-min-medium: 750px;
+$bp-max-medium: 749.99px;
+$bp-min-large: 1080px;
+$bp-max-large: 1079.99px;

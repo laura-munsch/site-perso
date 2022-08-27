@@ -14,11 +14,13 @@
     let headerClass = "initial";
 
     onMount(() => {
-        $asscroll.enable({
-            newScrollElements: document.querySelector(".scroll-ctn"),
-            horizontalScroll: true,
-            reset: true,
-        });
+        if (window.innerWidth >= 1080) {
+            $asscroll.enable({
+                newScrollElements: document.querySelector(".scroll-ctn"),
+                horizontalScroll: true,
+                reset: true,
+            });
+        }
 
         $asscroll.on("scroll", (scrollPos) => {
             cssVar = `--scroll-px:${scrollPos}px; --scroll-deg:${scrollPos}deg`;
