@@ -98,6 +98,10 @@ h1 {
     margin: 0;
     transform: translate(-10px, -50%) rotate(-2deg);
 
+    @media screen and (max-width: $bp-max-medium) {
+        font-size: #{(42/16)}rem;
+    }
+
     .link {
         display: inline-grid;
         place-content: center;
@@ -107,6 +111,11 @@ h1 {
         width: 50px;
         border: 1px solid $purple;
         border-radius: 50px;
+
+        @media screen and (max-width: $bp-max-medium) {
+            height: 40px;
+            width: 40px;
+        }
 
         img {
             transition: transform 0.3s;
