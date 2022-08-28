@@ -5,6 +5,7 @@
     import { onMount } from "svelte";
     import { asscroll } from "../stores";
     import ProjectItem from "../components/ProjectItem.svelte";
+    import IntersectionObserver from "../components/IntersectionObserver.svelte";
 
     // fetch the data
     const client = createClient();
@@ -92,10 +93,19 @@
 
         <main>
             {#each home.data.body as timelinePiece}
+                {@const year = prismicH.asText(timelinePiece.primary.year)}
+
                 <div class="step">
-                    <p class="year">
-                        {prismicH.asText(timelinePiece.primary.year)}
-                    </p>
+                    <IntersectionObserver let:intersecting top={0}>
+                        <p class="year" class:invisible={!intersecting}>
+                            {#each year.split("") as number, i}
+                                <span style="transition-delay:{i * 0.1}s">
+                                    {number}
+                                </span>
+                            {/each}
+                        </p>
+                    </IntersectionObserver>
+
                     <div class="description">
                         {@html prismicH.asHTML(timelinePiece.primary.title)}
                     </div>

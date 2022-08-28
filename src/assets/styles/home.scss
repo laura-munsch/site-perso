@@ -188,12 +188,25 @@ main {
     text-shadow: 1px 0 0 $purple, 0 1px 0 $purple, -1px 0 0 $purple,
         0 -1px 0 $purple;
     margin: 0 0 -60px 200px;
+    min-width: 300px;
     letter-spacing: 0.3ch;
     transform: translateX(calc(var(--scroll-px) * -0.05));
 
     @media screen and (max-width: $bp-max-medium) {
         font-size: #{(70/16)}rem;
         margin: 0 0 -53px -10px;
+    }
+
+    span {
+        display: inline-block;
+        transition: transform 0.3s, opacity 0.2s;
+    }
+
+    &.invisible {
+        span {
+            transform: translateY(40px);
+            opacity: 0;
+        }
     }
 }
 
