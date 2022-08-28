@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "ApfelGrotesk";
+    font-weight: normal;
+    font-weight: 400;
+    src: url("/fonts/ApfelGrotezk-Regular.woff") format("woff"),
+        url("/fonts/ApfelGrotezk-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ApfelGrotesk";
+    font-weight: normal;
+    font-weight: 700;
+    src: url("/fonts/ApfelGrotezk-Fett.woff") format("woff"),
+        url("/fonts/ApfelGrotezk-Fett.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Blogh";
+    font-weight: normal;
+    font-weight: 900;
+    src: url("/fonts/Blogh.otf");
+}
+
+@font-face {
+    font-family: "League Script";
+    font-weight: normal;
+    font-weight: 400;
+    src: url("/fonts/LeagueScript.otf");
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-body;
+    color: $black;
+    background-color: $beige;
+}
+
+h1 {
+    font-family: $font-heading;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}

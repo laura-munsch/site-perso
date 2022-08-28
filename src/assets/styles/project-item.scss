@@ -1,0 +1,167 @@
+.container {
+    width: 300px;
+    height: 300px;
+    border-radius: 500px;
+    transition: width 0.6s cubic-bezier(0.42, 0, 0.22, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $bp-min-medium) {
+        &:first-of-type {
+            margin-left: 40px;
+        }
+    }
+
+    @media screen and (max-width: $bp-max-medium) {
+        width: 250px;
+        height: 250px;
+    }
+
+    &::after {
+        content: "";
+        background-color: $black;
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition: opacity 0.5s 0.2s;
+        opacity: 0;
+        z-index: 2;
+    }
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.link {
+    display: grid;
+    place-content: center;
+    width: 140px;
+    height: 140px;
+    align-items: center;
+    position: absolute;
+    color: $pink;
+    background-color: currentColor;
+    border-radius: 100%;
+    outline: 0px solid currentColor;
+    outline-offset: -1px;
+    z-index: 3;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transition: opacity 0.3s, transform 0s 0.31s, outline-width 0.1s;
+
+    &:hover {
+        outline-width: 8px;
+    }
+
+    &::before {
+        display: block;
+        position: absolute;
+        filter: invert(1);
+    }
+
+    &--internal {
+        transform: translate(calc(-100% - 12px), -30%);
+
+        &::before {
+            content: $img-plus;
+            top: 64px;
+            left: 60px;
+            transform: rotate(6deg);
+        }
+    }
+
+    &--only {
+        transform: translate(-50%, -30%);
+    }
+
+    &--external {
+        color: $orange;
+        transform: translate(12px, -30%);
+
+        &::before {
+            content: $img-arrow;
+            top: 25px;
+            left: 54px;
+            transform: rotate(-5deg);
+        }
+    }
+}
+
+@media screen and (max-width: $bp-max-large) {
+    .link--internal {
+        width: 100%;
+        height: 100%;
+        transform: none;
+        top: 0;
+        left: 0;
+    }
+
+    .link--external {
+        display: none;
+    }
+}
+
+.link-text {
+    display: inline-block;
+    font-weight: 700;
+    font-size: #{(23/16)}rem;
+    line-height: 80%;
+    color: $white;
+    max-width: 100px;
+    position: absolute;
+
+    &--internal {
+        top: 27px;
+        left: 20px;
+        transform: rotate(-6deg);
+    }
+
+    &--external {
+        top: 75px;
+        left: 28px;
+        transform: rotate(-5deg);
+    }
+}
+
+// animation
+@media screen and (min-width: $bp-max-large) {
+    .container:hover {
+        width: 450px;
+
+        &::after {
+            opacity: 0.6;
+        }
+
+        .link {
+            opacity: 1;
+
+            &--internal {
+                transform: translate(calc(-100% - 12px), -50%);
+                transition: opacity 0.3s 0.5s,
+                    transform 0.3s 0.5s cubic-bezier(0.42, 0.19, 0.16, 1.48),
+                    outline-width 0.2s;
+            }
+
+            &--only {
+                transform: translate(-50%, -50%);
+            }
+
+            &--external {
+                transform: translate(12px, -50%);
+                transition: opacity 0.3s 0.8s,
+                    transform 0.3s 0.8s cubic-bezier(0.42, 0.19, 0.16, 1.48),
+                    outline-width 0.2s;
+            }
+        }
+    }
+}
