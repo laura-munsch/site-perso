@@ -14,27 +14,27 @@
     let headerClass = "initial";
 
     onMount(() => {
-        if (window.innerWidth >= 1080) {
+        if ($asscroll) {
             $asscroll.enable({
                 newScrollElements: document.querySelector(".scroll-ctn"),
                 horizontalScroll: true,
                 reset: true,
             });
+
+            $asscroll.on("scroll", (scrollPos) => {
+                cssVar = `--scroll-px:${scrollPos}px; --scroll-deg:${scrollPos}deg`;
+
+                if (scrollPos < 1) {
+                    headerClass = "initial";
+                } else {
+                    headerClass = "scrolled";
+                }
+            });
+
+            return () => {
+                $asscroll.disable();
+            };
         }
-
-        $asscroll.on("scroll", (scrollPos) => {
-            cssVar = `--scroll-px:${scrollPos}px; --scroll-deg:${scrollPos}deg`;
-
-            if (scrollPos < 1) {
-                headerClass = "initial";
-            } else {
-                headerClass = "scrolled";
-            }
-        });
-
-        return () => {
-            $asscroll.disable();
-        };
     });
 </script>
 

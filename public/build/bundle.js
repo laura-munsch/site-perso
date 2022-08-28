@@ -3885,7 +3885,7 @@ var app = (function () {
     	ctx[5] = constants_0;
     }
 
-    // (19:0) {#if item.project.slug}
+    // (21:0) {#if item.project.slug}
     function create_if_block$1(ctx) {
     	let await_block_anchor;
     	let promise;
@@ -3954,7 +3954,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(19:0) {#if item.project.slug}",
+    		source: "(21:0) {#if item.project.slug}",
     		ctx
     	});
 
@@ -3984,7 +3984,7 @@ var app = (function () {
     	return block;
     }
 
-    // (22:4) {:then project}
+    // (24:4) {:then project}
     function create_then_block$2(ctx) {
     	get_then_context$1(ctx);
     	let div;
@@ -4034,15 +4034,15 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img.src, img_src_value = /*project*/ ctx[4].data.image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = /*project*/ ctx[4].data.image.alt);
-    			attr_dev(img, "class", "image svelte-1bb200z");
-    			add_location(img, file$3, 24, 12, 649);
-    			attr_dev(span, "class", "link-text link-text--internal svelte-1bb200z");
-    			add_location(span, file$3, 35, 16, 972);
+    			attr_dev(img, "class", "image svelte-hix6h2");
+    			add_location(img, file$3, 26, 12, 696);
+    			attr_dev(span, "class", "link-text link-text--internal svelte-hix6h2");
+    			add_location(span, file$3, 37, 16, 1019);
     			attr_dev(a, "href", a_href_value = /*project*/ ctx[4].url);
-    			attr_dev(a, "class", a_class_value = "link link--internal " + (/*directLink*/ ctx[5] ? '' : 'link--only') + " svelte-1bb200z");
-    			add_location(a, file$3, 30, 12, 802);
-    			attr_dev(div, "class", "container svelte-1bb200z");
-    			add_location(div, file$3, 23, 8, 613);
+    			attr_dev(a, "class", a_class_value = "link link--internal " + (/*directLink*/ ctx[5] ? '' : 'link--only') + " svelte-hix6h2");
+    			add_location(a, file$3, 32, 12, 849);
+    			attr_dev(div, "class", "container svelte-hix6h2");
+    			add_location(div, file$3, 25, 8, 660);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div, anchor);
@@ -4074,7 +4074,7 @@ var app = (function () {
     				attr_dev(a, "href", a_href_value);
     			}
 
-    			if (dirty & /*item*/ 1 && a_class_value !== (a_class_value = "link link--internal " + (/*directLink*/ ctx[5] ? '' : 'link--only') + " svelte-1bb200z")) {
+    			if (dirty & /*item*/ 1 && a_class_value !== (a_class_value = "link link--internal " + (/*directLink*/ ctx[5] ? '' : 'link--only') + " svelte-hix6h2")) {
     				attr_dev(a, "class", a_class_value);
     			}
 
@@ -4105,14 +4105,14 @@ var app = (function () {
     		block,
     		id: create_then_block$2.name,
     		type: "then",
-    		source: "(22:4) {:then project}",
+    		source: "(24:4) {:then project}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:12) {#if directLink}
+    // (43:12) {#if directLink}
     function create_if_block_1$1(ctx) {
     	let a;
     	let span;
@@ -4139,12 +4139,12 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(span, "class", "link-text link-text--external svelte-1bb200z");
-    			add_location(span, file$3, 47, 20, 1331);
+    			attr_dev(span, "class", "link-text link-text--external svelte-hix6h2");
+    			add_location(span, file$3, 49, 20, 1378);
     			attr_dev(a, "href", a_href_value = /*directLink*/ ctx[5]);
-    			attr_dev(a, "class", "link link--external svelte-1bb200z");
+    			attr_dev(a, "class", "link link--external svelte-hix6h2");
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$3, 41, 16, 1139);
+    			add_location(a, file$3, 43, 16, 1186);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, a, anchor);
@@ -4172,14 +4172,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(41:12) {#if directLink}",
+    		source: "(43:12) {#if directLink}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (20:43)          <Loader />     {:then project}
+    // (22:43)          <Loader />     {:then project}
     function create_pending_block$2(ctx) {
     	let loader;
     	let current;
@@ -4215,7 +4215,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$2.name,
     		type: "pending",
-    		source: "(20:43)          <Loader />     {:then project}",
+    		source: "(22:43)          <Loader />     {:then project}",
     		ctx
     	});
 
@@ -4304,7 +4304,9 @@ var app = (function () {
     		const response = await client.getByUID("projects", slug);
 
     		{
-    			$asscroll.resize();
+    			if ($asscroll) {
+    				$asscroll.resize();
+    			}
     		}
 
     		return response;
@@ -4420,7 +4422,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			add_location(pre, file$2, 120, 8, 3501);
+    			add_location(pre, file$2, 120, 8, 3529);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, pre, anchor);
@@ -4628,52 +4630,52 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img0.src, img0_src_value = "images/monogramme-blanc.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "Monogramme en forme de visage avec un L et un M");
-    			attr_dev(img0, "class", "logo svelte-i18ltx");
-    			add_location(img0, file$2, 45, 12, 1265);
-    			attr_dev(span0, "class", "title svelte-i18ltx");
-    			add_location(span0, file$2, 52, 16, 1468);
-    			attr_dev(span1, "class", "title-bis svelte-i18ltx");
-    			add_location(span1, file$2, 53, 16, 1546);
-    			attr_dev(h1, "class", "svelte-i18ltx");
-    			add_location(h1, file$2, 51, 12, 1447);
-    			attr_dev(h2, "class", "svelte-i18ltx");
-    			add_location(h2, file$2, 58, 12, 1684);
+    			attr_dev(img0, "class", "logo svelte-14sm2ax");
+    			add_location(img0, file$2, 45, 12, 1293);
+    			attr_dev(span0, "class", "title svelte-14sm2ax");
+    			add_location(span0, file$2, 52, 16, 1496);
+    			attr_dev(span1, "class", "title-bis svelte-14sm2ax");
+    			add_location(span1, file$2, 53, 16, 1574);
+    			attr_dev(h1, "class", "svelte-14sm2ax");
+    			add_location(h1, file$2, 51, 12, 1475);
+    			attr_dev(h2, "class", "svelte-14sm2ax");
+    			add_location(h2, file$2, 58, 12, 1712);
     			if (!src_url_equal(img1.src, img1_src_value = "/images/big-purple-star.svg")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "");
-    			attr_dev(img1, "class", "star svelte-i18ltx");
+    			attr_dev(img1, "class", "star svelte-14sm2ax");
     			attr_dev(img1, "id", "star-1");
-    			add_location(img1, file$2, 60, 12, 1744);
+    			add_location(img1, file$2, 60, 12, 1772);
     			if (!src_url_equal(img2.src, img2_src_value = "/images/big-purple-star.svg")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "");
-    			attr_dev(img2, "class", "star svelte-i18ltx");
+    			attr_dev(img2, "class", "star svelte-14sm2ax");
     			attr_dev(img2, "id", "star-2");
-    			add_location(img2, file$2, 66, 12, 1906);
+    			add_location(img2, file$2, 66, 12, 1934);
     			if (!src_url_equal(img3.src, img3_src_value = "/images/big-purple-star.svg")) attr_dev(img3, "src", img3_src_value);
     			attr_dev(img3, "alt", "");
-    			attr_dev(img3, "class", "star svelte-i18ltx");
+    			attr_dev(img3, "class", "star svelte-14sm2ax");
     			attr_dev(img3, "id", "star-3");
-    			add_location(img3, file$2, 72, 12, 2068);
+    			add_location(img3, file$2, 72, 12, 2096);
     			if (!src_url_equal(img4.src, img4_src_value = "/images/small-purple-star.svg")) attr_dev(img4, "src", img4_src_value);
     			attr_dev(img4, "alt", "");
-    			attr_dev(img4, "class", "star svelte-i18ltx");
+    			attr_dev(img4, "class", "star svelte-14sm2ax");
     			attr_dev(img4, "id", "star-4");
-    			add_location(img4, file$2, 78, 12, 2230);
+    			add_location(img4, file$2, 78, 12, 2258);
     			if (!src_url_equal(img5.src, img5_src_value = "/images/small-purple-star.svg")) attr_dev(img5, "src", img5_src_value);
     			attr_dev(img5, "alt", "");
-    			attr_dev(img5, "class", "star svelte-i18ltx");
+    			attr_dev(img5, "class", "star svelte-14sm2ax");
     			attr_dev(img5, "id", "star-5");
-    			add_location(img5, file$2, 84, 12, 2394);
-    			attr_dev(header, "class", header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-i18ltx"));
-    			add_location(header, file$2, 44, 8, 1224);
-    			attr_dev(main, "class", "svelte-i18ltx");
-    			add_location(main, file$2, 92, 8, 2573);
+    			add_location(img5, file$2, 84, 12, 2422);
+    			attr_dev(header, "class", header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-14sm2ax"));
+    			add_location(header, file$2, 44, 8, 1252);
+    			attr_dev(main, "class", "svelte-14sm2ax");
+    			add_location(main, file$2, 92, 8, 2601);
     			if (!src_url_equal(img6.src, img6_src_value = "images/monogramme-blanc.png")) attr_dev(img6, "src", img6_src_value);
     			attr_dev(img6, "alt", "Monogramme en forme de visage avec un L et un M");
-    			attr_dev(img6, "class", "svelte-i18ltx");
-    			add_location(img6, file$2, 112, 12, 3261);
+    			attr_dev(img6, "class", "svelte-14sm2ax");
+    			add_location(img6, file$2, 112, 12, 3289);
     			html_tag.a = null;
-    			attr_dev(footer, "class", "svelte-i18ltx");
-    			add_location(footer, file$2, 111, 8, 3240);
+    			attr_dev(footer, "class", "svelte-14sm2ax");
+    			add_location(footer, file$2, 111, 8, 3268);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, header, anchor);
@@ -4713,7 +4715,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*headerClass*/ 2 && header_class_value !== (header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-i18ltx"))) {
+    			if (!current || dirty & /*headerClass*/ 2 && header_class_value !== (header_class_value = "" + (null_to_empty(/*headerClass*/ ctx[1]) + " svelte-14sm2ax"))) {
     				attr_dev(header, "class", header_class_value);
     			}
 
@@ -4901,14 +4903,14 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(p, "class", "year svelte-i18ltx");
-    			add_location(p, file$2, 95, 20, 2687);
-    			attr_dev(div0, "class", "description svelte-i18ltx");
-    			add_location(div0, file$2, 98, 20, 2819);
-    			attr_dev(div1, "class", "projects svelte-i18ltx");
-    			add_location(div1, file$2, 102, 20, 2970);
+    			attr_dev(p, "class", "year svelte-14sm2ax");
+    			add_location(p, file$2, 95, 20, 2715);
+    			attr_dev(div0, "class", "description svelte-14sm2ax");
+    			add_location(div0, file$2, 98, 20, 2847);
+    			attr_dev(div1, "class", "projects svelte-14sm2ax");
+    			add_location(div1, file$2, 102, 20, 2998);
     			attr_dev(div2, "class", "step");
-    			add_location(div2, file$2, 94, 16, 2648);
+    			add_location(div2, file$2, 94, 16, 2676);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div2, anchor);
@@ -5067,9 +5069,9 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(div, "class", "scroll-ctn svelte-i18ltx");
+    			attr_dev(div, "class", "scroll-ctn svelte-14sm2ax");
     			attr_dev(div, "style", /*cssVar*/ ctx[0]);
-    			add_location(div, file$2, 40, 0, 1114);
+    			add_location(div, file$2, 40, 0, 1142);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div, anchor);
@@ -5130,27 +5132,27 @@ var app = (function () {
     	let headerClass = "initial";
 
     	onMount(() => {
-    		if (window.innerWidth >= 1080) {
+    		if ($asscroll) {
     			$asscroll.enable({
     				newScrollElements: document.querySelector(".scroll-ctn"),
     				horizontalScroll: true,
     				reset: true
     			});
+
+    			$asscroll.on("scroll", scrollPos => {
+    				$$invalidate(0, cssVar = `--scroll-px:${scrollPos}px; --scroll-deg:${scrollPos}deg`);
+
+    				if (scrollPos < 1) {
+    					$$invalidate(1, headerClass = "initial");
+    				} else {
+    					$$invalidate(1, headerClass = "scrolled");
+    				}
+    			});
+
+    			return () => {
+    				$asscroll.disable();
+    			};
     		}
-
-    		$asscroll.on("scroll", scrollPos => {
-    			$$invalidate(0, cssVar = `--scroll-px:${scrollPos}px; --scroll-deg:${scrollPos}deg`);
-
-    			if (scrollPos < 1) {
-    				$$invalidate(1, headerClass = "initial");
-    			} else {
-    				$$invalidate(1, headerClass = "scrolled");
-    			}
-    		});
-
-    		return () => {
-    			$asscroll.disable();
-    		};
     	});
 
     	const writable_props = [];
@@ -5343,14 +5345,14 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(h1, "class", "svelte-svpq3b");
+    			attr_dev(h1, "class", "svelte-1cdn197");
     			add_location(h1, file$1, 23, 12, 636);
     			html_tag.a = null;
-    			attr_dev(div0, "class", "description svelte-svpq3b");
+    			attr_dev(div0, "class", "description svelte-1cdn197");
     			add_location(div0, file$1, 22, 8, 598);
-    			attr_dev(div1, "class", "slider svelte-svpq3b");
+    			attr_dev(div1, "class", "slider svelte-1cdn197");
     			add_location(div1, file$1, 44, 8, 1264);
-    			attr_dev(article, "class", "ctn svelte-svpq3b");
+    			attr_dev(article, "class", "ctn svelte-1cdn197");
     			add_location(article, file$1, 17, 4, 459);
     		},
     		m: function mount(target, anchor) {
@@ -5476,10 +5478,10 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img.src, img_src_value = "/images/purple-arrow.svg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			attr_dev(img, "class", "svelte-svpq3b");
+    			attr_dev(img, "class", "svelte-1cdn197");
     			add_location(img, file$1, 28, 24, 833);
     			attr_dev(a, "href", /*directLink*/ ctx[4]);
-    			attr_dev(a, "class", "link svelte-svpq3b");
+    			attr_dev(a, "class", "link svelte-1cdn197");
     			attr_dev(a, "target", "_blank");
     			add_location(a, file$1, 27, 20, 749);
     		},
@@ -5544,7 +5546,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(ul, "class", "tags svelte-svpq3b");
+    			attr_dev(ul, "class", "tags svelte-1cdn197");
     			add_location(ul, file$1, 34, 16, 992);
     		},
     		m: function mount(target, anchor) {
@@ -5616,7 +5618,7 @@ var app = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(li, "class", "tag svelte-svpq3b");
+    			attr_dev(li, "class", "tag svelte-1cdn197");
     			add_location(li, file$1, 36, 24, 1082);
     		},
     		m: function mount(target, anchor) {
@@ -5732,7 +5734,7 @@ var app = (function () {
     		h: function hydrate() {
     			if (!src_url_equal(img.src, img_src_value = /*slide*/ ctx[5].image.url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*slide*/ ctx[5].image.alt);
-    			attr_dev(img, "class", "svelte-svpq3b");
+    			attr_dev(img, "class", "svelte-1cdn197");
     			add_location(img, file$1, 47, 20, 1396);
     		},
     		m: function mount(target, anchor) {
@@ -7678,7 +7680,7 @@ var app = (function () {
     /* src/App.svelte generated by Svelte v3.48.0 */
     const file = "src/App.svelte";
 
-    // (19:8) <Route path="projets/:slug" let:params>
+    // (21:8) <Route path="projets/:slug" let:params>
     function create_default_slot_1(ctx) {
     	let project;
     	let current;
@@ -7722,14 +7724,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(19:8) <Route path=\\\"projets/:slug\\\" let:params>",
+    		source: "(21:8) <Route path=\\\"projets/:slug\\\" let:params>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (17:4) <Router {url}>
+    // (19:4) <Router {url}>
     function create_default_slot(ctx) {
     	let route0;
     	let t;
@@ -7804,7 +7806,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(17:4) <Router {url}>",
+    		source: "(19:4) <Router {url}>",
     		ctx
     	});
 
@@ -7840,7 +7842,7 @@ var app = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(div, "asscroll-container", "");
-    			add_location(div, file, 15, 0, 386);
+    			add_location(div, file, 17, 0, 441);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, div, anchor);
@@ -7892,7 +7894,9 @@ var app = (function () {
     	let { url = "" } = $$props;
 
     	onMount(() => {
-    		set_store_value(asscroll$1, $asscroll = new ASScroll(), $asscroll);
+    		if (window.innerWidth >= 1080) {
+    			set_store_value(asscroll$1, $asscroll = new ASScroll(), $asscroll);
+    		}
     	});
 
     	const writable_props = ['url'];

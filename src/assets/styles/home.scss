@@ -11,6 +11,7 @@ $scroll-rotate: calc(var(--scroll-deg) / 5);
 
     @media screen and (max-width: $bp-max-large) {
         flex-direction: column;
+        max-width: 100%;
     }
 }
 
@@ -93,6 +94,13 @@ header {
     position: absolute;
     top: 45px;
     left: 50px;
+
+    @media screen and (max-width: $bp-max-medium) {
+        top: 25px;
+        left: 30px;
+        width: 60px;
+        height: 60px;
+    }
 }
 
 h1 {
@@ -105,6 +113,10 @@ h1 {
     position: relative;
     transition: color 0.2s 0.2s;
     z-index: 2;
+
+    @media screen and (max-width: $bp-max-medium) {
+        font-size: #{(80/16)}rem;
+    }
 
     .title {
         display: inline-block;
@@ -130,6 +142,10 @@ h2 {
     font-weight: 400;
     line-height: 120%;
     z-index: 3;
+
+    @media screen and (max-width: $bp-max-medium) {
+        font-size: #{(35/16)}rem;
+    }
 }
 
 main {
@@ -143,6 +159,7 @@ main {
         flex-direction: column;
         padding: 80px 40px;
         align-items: flex-start;
+        gap: 100px;
     }
 }
 
@@ -158,6 +175,11 @@ main {
         font-size: #{(26/16)}rem;
         line-height: 125%;
     }
+
+    @media screen and (max-width: $bp-max-medium) {
+        width: 100%;
+        margin-bottom: 50px;
+    }
 }
 
 .year {
@@ -168,11 +190,21 @@ main {
     margin: 0 0 -60px 200px;
     letter-spacing: 0.3ch;
     transform: translateX(calc(var(--scroll-px) * -0.05));
+
+    @media screen and (max-width: $bp-max-medium) {
+        font-size: #{(70/16)}rem;
+        margin: 0 0 -53px -10px;
+    }
 }
 
 .projects {
     display: flex;
     gap: 25px;
+
+    @media screen and (max-width: $bp-max-medium) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 footer {

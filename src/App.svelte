@@ -9,7 +9,9 @@
     export let url = "";
 
     onMount(() => {
-        $asscroll = new ASScroll();
+        if (window.innerWidth >= 1080) {
+            $asscroll = new ASScroll();
+        }
     });
 </script>
 
