@@ -2,12 +2,18 @@
     import * as prismicH from "@prismicio/helpers";
     import { link } from "svelte-routing";
     import Loader from "./Loader.svelte";
+    import { asscroll } from "../stores";
 
     export let item;
     export let client;
 
     async function loadProject(slug) {
         const response = await client.getByUID("projects", slug);
+        then: {
+            if ($asscroll) {
+                $asscroll.resize();
+            }
+        }
         return response;
     }
 </script>
@@ -16,6 +22,7 @@
     {#await loadProject(item.project.slug)}
         <Loader />
     {:then project}
+        {@const directLink = project.data.direct_link.url}
         <div class="container">
             <img
                 src={project.data.image.url}
@@ -23,24 +30,28 @@
                 class="image"
             />
 
-            {#if project.data.direct_link.url}
+            <a
+                href={project.url}
+                class="link link--internal {directLink ? '' : 'link--only'}"
+                use:link
+            >
+                <span class="link-text link-text--internal">
+                    en savoir plus
+                </span>
+            </a>
+
+            {#if directLink}
                 <a
-                    href={project.data.direct_link.url}
+                    href={directLink}
                     class="link link--external"
                     target="_blank"
                     use:link
                 >
                     <span class="link-text link-text--external">
-                        Voir le site
+                        accéder au site
                     </span>
                 </a>
             {/if}
-
-            <a href={project.url} class="link link--internal" use:link>
-                <span class="link-text link-text--internal">
-                    En savoir plus
-                </span>
-            </a>
         </div>
     {/await}
 {/if}

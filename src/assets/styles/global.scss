@@ -21,6 +21,13 @@
     src: url("/fonts/Blogh.otf");
 }
 
+@font-face {
+    font-family: "League Script";
+    font-weight: normal;
+    font-weight: 400;
+    src: url("/fonts/LeagueScript.otf");
+}
+
 body,
 html {
     margin: 0;
@@ -30,6 +37,7 @@ html {
 body {
     font-family: $font-body;
     color: $black;
+    background-color: $beige;
 }
 
 h1 {
